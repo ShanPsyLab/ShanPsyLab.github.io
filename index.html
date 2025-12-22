@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- [EDIT HERE] Browser Tab Title -->
     <title>Social Decision Neuroscience Lab | Shanshan</title>
     <meta name="description" content="Investigating the cognitive, computational, and neural mechanisms underlying social learning and decision-making. Led by Shanshan.">
     
@@ -68,13 +69,16 @@
             font-weight: 600;
         }
         
-        /* Section Visibility Control */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
+        /* FIXED: Strict Visibility Control */
+        /* This rule forces the element to hide if it DOES NOT have the 'active' class */
+        /* Using !important overrides Tailwind's display classes (like flex/grid) */
+        .tab-content:not(.active) {
+            display: none !important;
         }
+        
         .tab-content.active {
-            display: block;
+            /* We don't force display:block here so that flex/grid layouts work naturally */
+            animation: fadeIn 0.4s ease-in-out;
         }
         
         @keyframes fadeIn {
@@ -93,6 +97,7 @@
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="switchTab('home')">
                     <span class="font-bold text-lg sm:text-xl text-brand-900 tracking-tight flex items-center gap-2">
                         <i data-lucide="brain-circuit" class="w-7 h-7 text-brand-600"></i>
+                        <!-- [EDIT HERE] Lab Name in Navigation -->
                         <span>Social Decision Neuroscience Lab</span>
                     </span>
                 </div>
@@ -138,12 +143,15 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-brand-700 uppercase bg-brand-100 rounded-full">
+                            <!-- [EDIT HERE] PI Label -->
                             PI: Shanshan
                         </div>
                         <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 font-serif leading-tight">
+                            <!-- [EDIT HERE] Main Title (Use <br> for line break) -->
                             Social Decision <br> <span class="text-brand-600">Neuroscience Lab</span>
                         </h1>
                         <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+                            <!-- [EDIT HERE] Short intro sentence -->
                             We investigate the cognitive, computational, and neural mechanisms underlying social learning and decision-making.
                         </p>
                         <div class="mt-8 flex gap-4">
@@ -162,6 +170,7 @@
                         
                         <div class="relative bg-white p-8 rounded-2xl shadow-xl border border-slate-100 prose-academic">
                             <h3 class="text-lg font-bold text-slate-900 mb-4 border-b pb-2">Our Focus</h3>
+                            <!-- [EDIT HERE] Right-side card text -->
                             <p class="text-sm">
                                 "How do we understand and predict others’ actions? How do self–other distinctions shape value computation? How do motivational systems modulate social learning?"
                             </p>
@@ -183,11 +192,14 @@
                     <!-- News Item 1 -->
                     <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
                          <div class="flex-shrink-0 w-16 text-center">
+                            <!-- [EDIT HERE] News 1: Date -->
                             <span class="block text-2xl font-bold text-brand-600">Dec</span>
                             <span class="block text-sm font-semibold text-slate-500">2025</span>
                         </div>
                         <div>
+                            <!-- [EDIT HERE] News 1: Title -->
                             <h3 class="text-lg font-bold text-slate-900">Website Launch</h3>
+                            <!-- [EDIT HERE] News 1: Content -->
                             <p class="mt-2 text-slate-600 text-sm leading-relaxed">
                                 Welcome to the new Social Decision Neuroscience Lab website! We are excited to share our research and updates with the community.
                             </p>
@@ -197,11 +209,14 @@
                     <!-- News Item 2 -->
                     <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
                         <div class="flex-shrink-0 w-16 text-center">
+                           <!-- [EDIT HERE] News 2: Date -->
                            <span class="block text-2xl font-bold text-brand-600">Nov</span>
                            <span class="block text-sm font-semibold text-slate-500">2025</span>
                        </div>
                        <div>
+                           <!-- [EDIT HERE] News 2: Title -->
                            <h3 class="text-lg font-bold text-slate-900">New Publication in NeuroImage</h3>
+                           <!-- [EDIT HERE] News 2: Content -->
                            <p class="mt-2 text-slate-600 text-sm leading-relaxed">
                                Our paper on pragmatic reasoning in referential communication has been published. Congratulations to the team!
                            </p>
@@ -212,11 +227,14 @@
                    <!-- News Item 3 -->
                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
                         <div class="flex-shrink-0 w-16 text-center">
+                            <!-- [EDIT HERE] News 3: Date -->
                             <span class="block text-2xl font-bold text-brand-600">Sep</span>
                             <span class="block text-sm font-semibold text-slate-500">2025</span>
                         </div>
                         <div>
+                            <!-- [EDIT HERE] News 3: Title -->
                             <h3 class="text-lg font-bold text-slate-900">Welcome New PhD Students</h3>
+                            <!-- [EDIT HERE] News 3: Content -->
                             <p class="mt-2 text-slate-600 text-sm leading-relaxed">
                                 The lab welcomes our incoming cohort of PhD students. We look forward to the great research ahead!
                             </p>
@@ -240,7 +258,9 @@
                         <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition">
                             <i data-lucide="users" class="w-6 h-6"></i>
                         </div>
+                        <!-- [EDIT HERE] Research 1: Title -->
                         <h3 class="text-xl font-bold text-slate-900 mb-3">1. Social Prediction & Theory of Mind</h3>
+                        <!-- [EDIT HERE] Research 1: Description -->
                         <p class="text-slate-600 leading-relaxed">
                             We examine how people understand and predict others’ actions and intentions. Our research seeks to map the neural architectures that support mentalizing and the simulation of other minds.
                         </p>
@@ -251,7 +271,9 @@
                         <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition">
                             <i data-lucide="scale" class="w-6 h-6"></i>
                         </div>
+                        <!-- [EDIT HERE] Research 2: Title -->
                         <h3 class="text-xl font-bold text-slate-900 mb-3">2. Value Computation & Decision Control</h3>
+                        <!-- [EDIT HERE] Research 2: Description -->
                         <p class="text-slate-600 leading-relaxed">
                             Investigating how self–other distinctions shape value computation. We explore how the brain exerts control over decisions when the outcomes affect others versus oneself.
                         </p>
@@ -262,7 +284,9 @@
                         <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition">
                             <i data-lucide="zap" class="w-6 h-6"></i>
                         </div>
+                        <!-- [EDIT HERE] Research 3: Title -->
                         <h3 class="text-xl font-bold text-slate-900 mb-3">3. Motivation & Learning Strategies</h3>
+                        <!-- [EDIT HERE] Research 3: Description -->
                         <p class="text-slate-600 leading-relaxed">
                             Studying how motivational systems modulate social learning. We use computational reinforcement learning models to quantify how motivation alters learning rates and exploration strategies.
                         </p>
@@ -273,7 +297,9 @@
                         <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition">
                             <i data-lucide="activity" class="w-6 h-6"></i>
                         </div>
+                        <!-- [EDIT HERE] Research 4: Title -->
                         <h3 class="text-xl font-bold text-slate-900 mb-3">4. Lifespan & Clinical Populations</h3>
+                        <!-- [EDIT HERE] Research 4: Description -->
                         <p class="text-slate-600 leading-relaxed">
                             Analyzing how these processes change across the lifespan and in subclinical populations. We aim to identify biomarkers of social cognitive decline or dysfunction.
                         </p>
@@ -291,14 +317,19 @@
                     <!-- Pub 1 (2025) -->
                     <div class="p-8 hover:bg-slate-50 transition">
                         <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                            <!-- [EDIT HERE] Pub 1: Title -->
                             <h3 class="text-lg font-bold text-slate-900">Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication</h3>
+                            <!-- [EDIT HERE] Pub 1: Year -->
                             <span class="text-sm font-semibold text-brand-600 shrink-0">2025</span>
                         </div>
                         <div class="mt-2 text-slate-600">
+                            <!-- [EDIT HERE] Pub 1: Authors -->
                             <span class="font-semibold text-slate-900">Zhen, S.</span>, Martinez-Saito, M., & Yu, R.
                         </div>
+                        <!-- [EDIT HERE] Pub 1: Journal -->
                         <div class="text-slate-500 italic mt-1 font-serif">NeuroImage</div>
                         <div class="mt-4 flex gap-4">
+                            <!-- [EDIT HERE] Pub 1: Link (href="URL") -->
                             <a href="https://doi.org/10.1016/j.neuroimage.2024.121022" target="_blank" class="text-xs font-bold text-slate-400 hover:text-brand-600 uppercase tracking-wide">View Article</a>
                         </div>
                     </div>
@@ -306,12 +337,15 @@
                     <!-- Pub 2 (2024) -->
                     <div class="p-8 hover:bg-slate-50 transition">
                         <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                            <!-- [EDIT HERE] Pub 2: Title -->
                             <h3 class="text-lg font-bold text-slate-900">Moral characteristics predicting COVID‐19 vaccination</h3>
                             <span class="text-sm font-semibold text-brand-600 shrink-0">2024</span>
                         </div>
                         <div class="mt-2 text-slate-600">
+                            <!-- [EDIT HERE] Pub 2: Authors -->
                             Zher-Wen, <span class="font-semibold text-slate-900">Zhen, S.</span>, & Yu, R.
                         </div>
+                        <!-- [EDIT HERE] Pub 2: Journal -->
                         <div class="text-slate-500 italic mt-1 font-serif">Journal of Personality</div>
                         <div class="mt-4 flex gap-4">
                             <a href="#" class="text-xs font-bold text-slate-400 hover:text-brand-600 uppercase tracking-wide">View Article</a>
@@ -371,11 +405,15 @@
                         </div>
                     </div>
                     <div class="text-center md:text-left flex-1">
+                        <!-- [EDIT HERE] PI Name -->
                         <h4 class="text-3xl font-bold text-slate-900">Shanshan</h4>
+                        <!-- [EDIT HERE] PI Title -->
                         <p class="text-brand-600 font-semibold text-lg mt-2">Assistant Professor</p>
+                        <!-- [EDIT HERE] University -->
                         <p class="text-slate-500 text-sm mt-1 uppercase tracking-wide font-semibold">City University of Hong Kong</p>
                         
                         <div class="mt-6 prose-academic">
+                            <!-- [EDIT HERE] PI Bio -->
                             <p>
                                 Shanshan leads the Social Decision Neuroscience Lab. Her research bridges social psychology and computational neuroscience to understand the fundamental algorithms of social life.
                             </p>
@@ -397,11 +435,14 @@
                         <!-- PhD Student 1 -->
                         <div class="text-center group">
                             <div class="w-32 h-32 mx-auto bg-slate-50 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
+                                <!-- [EDIT HERE] Student Photo -->
                                 <div class="w-full h-full flex items-center justify-center text-slate-300">
                                     <i data-lucide="smile" class="w-16 h-16"></i>
                                 </div>
                             </div>
+                            <!-- [EDIT HERE] Student 1: Name -->
                             <h4 class="font-bold text-slate-900">Student Name</h4>
+                            <!-- [EDIT HERE] Student 1: Focus -->
                             <p class="text-xs text-brand-600 mt-1">Research Focus</p>
                         </div>
 
@@ -412,6 +453,7 @@
                                     <i data-lucide="smile" class="w-16 h-16"></i>
                                 </div>
                             </div>
+                            <!-- [EDIT HERE] Student 2: Name -->
                             <h4 class="font-bold text-slate-900">Student Name</h4>
                             <p class="text-xs text-brand-600 mt-1">Research Focus</p>
                         </div>
@@ -423,6 +465,7 @@
                                     <i data-lucide="smile" class="w-16 h-16"></i>
                                 </div>
                             </div>
+                            <!-- [EDIT HERE] Student 3: Name -->
                             <h4 class="font-bold text-slate-900">Student Name</h4>
                             <p class="text-xs text-brand-600 mt-1">Research Focus</p>
                         </div>
@@ -434,6 +477,7 @@
                                     <i data-lucide="smile" class="w-16 h-16"></i>
                                 </div>
                             </div>
+                            <!-- [EDIT HERE] Student 4: Name -->
                             <h4 class="font-bold text-slate-900">Student Name</h4>
                             <p class="text-xs text-brand-600 mt-1">Research Focus</p>
                         </div>
@@ -450,6 +494,7 @@
                 
                 <div class="bg-slate-50 rounded-2xl p-8 md:p-12 border border-slate-100 shadow-sm text-center">
                     <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                        <!-- [EDIT HERE] Contact Page Text -->
                         We are always looking for motivated students and collaborators. If you are interested in our work, please don't hesitate to reach out.
                     </p>
                     
@@ -461,6 +506,7 @@
                             <div>
                                 <h4 class="font-bold text-slate-900">Address</h4>
                                 <p class="text-slate-600 text-sm mt-1">
+                                    <!-- [EDIT HERE] Address -->
                                     City University of Hong Kong<br>
                                     Tat Chee Avenue<br>
                                     Kowloon, Hong Kong
@@ -474,6 +520,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900">Email</h4>
+                                <!-- [EDIT HERE] Email -->
                                 <a href="mailto:email@cityu.edu.hk" class="text-slate-600 text-sm mt-1 hover:text-brand-600 transition">email@cityu.edu.hk</a>
                             </div>
                         </div>
@@ -489,6 +536,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             <div class="flex items-center gap-2 mb-4">
                 <i data-lucide="brain-circuit" class="w-6 h-6 text-brand-500"></i>
+                <!-- [EDIT HERE] Footer Lab Name -->
                 <span class="text-xl font-bold font-serif">Social Decision Neuroscience Lab</span>
             </div>
             
@@ -498,6 +546,7 @@
                  <a href="#" class="text-slate-400 hover:text-white transition"><span class="sr-only">LinkedIn</span><i data-lucide="linkedin" class="w-5 h-5"></i></a>
             </div>
             
+            <!-- [EDIT HERE] Footer Copyright -->
             <p class="text-slate-500 text-sm">© 2025 Shanshan. All rights reserved.</p>
         </div>
     </footer>
