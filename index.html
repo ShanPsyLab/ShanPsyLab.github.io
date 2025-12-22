@@ -191,9 +191,10 @@
         
         <!-- PAGE: HOME -->
         <!-- Changed gradient to warm beige/cream tones -->
-        <section id="home" class="tab-content active min-h-[calc(100vh-4rem)] flex items-start pt-6 md:pt-16 bg-gradient-to-br from-cream via-beige to-stone-100">
+        <section id="home" class="tab-content active min-h-[calc(100vh-4rem)] flex flex-col items-center pt-6 md:pt-16 bg-gradient-to-br from-cream via-beige to-stone-100 pb-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Hero Section (Top) -->
+                <div class="grid md:grid-cols-2 gap-12 items-center min-h-[60vh]">
                     <div>
                         <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-brand-700 uppercase bg-stone-200 rounded-full">
                             <!-- [EDIT HERE] PI Label -->
@@ -214,8 +215,8 @@
                                 Our Research
                             </button>
                             <!-- Secondary Button: Stone Outline -->
-                            <button onclick="switchTab('news')" class="inline-flex items-center px-6 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-beige focus:outline-none transition">
-                                Latest News
+                            <button onclick="switchTab('team')" class="inline-flex items-center px-6 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-beige focus:outline-none transition">
+                                Meet the Team
                             </button>
                         </div>
                     </div>
@@ -236,6 +237,77 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- NEW SECTION: Research Highlights (Icons) -->
+                <div class="mt-16 border-t border-stone-200 pt-16">
+                    <h2 class="text-2xl font-serif text-brand-700 mb-10 text-center">Core Research Themes</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Theme 1 -->
+                        <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:border-brand-500 transition text-center group cursor-pointer" onclick="switchTab('research')">
+                            <div class="w-12 h-12 bg-beige rounded-full flex items-center justify-center mx-auto mb-4 text-brand-700 group-hover:bg-brand-700 group-hover:text-white transition">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-stone-800 mb-2">Social Prediction</h3>
+                            <p class="text-sm text-stone-600">Understanding how we predict others' actions and intentions.</p>
+                        </div>
+                        <!-- Theme 2 -->
+                        <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:border-brand-500 transition text-center group cursor-pointer" onclick="switchTab('research')">
+                            <div class="w-12 h-12 bg-beige rounded-full flex items-center justify-center mx-auto mb-4 text-brand-700 group-hover:bg-brand-700 group-hover:text-white transition">
+                                <i data-lucide="scale" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-stone-800 mb-2">Decision Control</h3>
+                            <p class="text-sm text-stone-600">How self-other distinctions shape value computation.</p>
+                        </div>
+                        <!-- Theme 3 -->
+                        <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:border-brand-500 transition text-center group cursor-pointer" onclick="switchTab('research')">
+                            <div class="w-12 h-12 bg-beige rounded-full flex items-center justify-center mx-auto mb-4 text-brand-700 group-hover:bg-brand-700 group-hover:text-white transition">
+                                <i data-lucide="activity" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-stone-800 mb-2">Lifespan Changes</h3>
+                            <p class="text-sm text-stone-600">Investigating social cognition in clinical and aging populations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW SECTION: Join Us & Latest News -->
+                <div class="mt-16 grid md:grid-cols-2 gap-8">
+                    <!-- Join Us Box -->
+                    <div class="bg-brand-700 text-stone-100 p-8 rounded-2xl shadow-lg flex flex-col justify-center text-center">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-4">Join the Lab</h3>
+                        <p class="mb-6 opacity-90">
+                            We are currently looking for motivated PhD students and Postdocs interested in computational psychiatry and social decision-making.
+                        </p>
+                        <div>
+                            <button onclick="switchTab('contact')" class="inline-flex items-center px-6 py-2 bg-white text-brand-700 font-bold rounded-full hover:bg-stone-100 transition">
+                                Get in Touch
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Latest News Preview -->
+                    <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-serif font-bold text-brand-700">Latest Update</h3>
+                            <button onclick="switchTab('news')" class="text-sm text-stone-500 hover:text-brand-700">View All &rarr;</button>
+                        </div>
+                        <div class="space-y-4">
+                            <!-- Featured News Item -->
+                            <div class="border-l-4 border-brand-500 pl-4">
+                                <span class="text-xs font-bold text-brand-600 uppercase tracking-wide">Dec 2025</span>
+                                <h4 class="font-bold text-stone-900 mt-1">Website Launch</h4>
+                                <p class="text-sm text-stone-600 mt-1 line-clamp-2">
+                                    Welcome to the new Social Decision Neuroscience Lab website! Check out our latest publications and meet the team.
+                                </p>
+                            </div>
+                            <!-- Second News Item -->
+                            <div class="border-l-4 border-stone-300 pl-4 opacity-75">
+                                <span class="text-xs font-bold text-stone-500 uppercase tracking-wide">Nov 2025</span>
+                                <h4 class="font-bold text-stone-900 mt-1">New Publication in NeuroImage</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -583,13 +655,12 @@
                         <!-- [EDIT HERE] PI Title -->
                         <p class="text-brand-700 font-semibold text-lg mt-2">Assistant Professor</p>
                         <!-- [EDIT HERE] University -->
-                        <p class="text-stone-500 text-sm mt-1 uppercase tracking-wide font-semibold">Department of Social and Behavioural Sciences</p>
                         <p class="text-stone-500 text-sm mt-1 uppercase tracking-wide font-semibold">City University of Hong Kong</p>
                         
                         <div class="mt-6 prose-academic">
                             <!-- [EDIT HERE] PI Bio -->
                             <p>
-                                Shanshan leads the Social Decision Neuroscience Lab. 
+                                Shanshan leads the Social Decision Neuroscience Lab. Her research bridges social psychology and computational neuroscience to understand the fundamental algorithms of social life.
                             </p>
                         </div>
                         
@@ -724,7 +795,7 @@
                             <div>
                                 <h4 class="font-bold text-stone-900">Email</h4>
                                 <!-- [EDIT HERE] Email -->
-                                <a href="mailto:email@cityu.edu.hk" class="text-stone-600 text-sm mt-1 hover:text-brand-600 transition">shanzhen@cityu.edu.hk</a>
+                                <a href="mailto:email@cityu.edu.hk" class="text-stone-600 text-sm mt-1 hover:text-brand-600 transition">email@cityu.edu.hk</a>
                             </div>
                         </div>
                     </div>
@@ -774,7 +845,7 @@
 
     <script>
         // Tab Switching Logic
-        function switchTab(tabId) {
+        function switchTab(tabId, updateHistory = true) {
             // 1. Hide all tab contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => {
@@ -796,15 +867,38 @@
                 }
             });
             
-            // 4. Scroll to top
+            // 4. Update History (URL)
+            if (updateHistory) {
+                history.pushState(null, null, '#' + tabId);
+            }
+
+            // 5. Scroll to top
             window.scrollTo(0, 0);
             
-            // 5. Close Mobile Menu if open
+            // 6. Close Mobile Menu if open
             const mobileMenu = document.getElementById('mobile-menu');
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
             }
         }
+
+        // Handle Browser Back/Forward Buttons
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                switchTab(hash, false);
+            } else {
+                switchTab('home', false);
+            }
+        });
+
+        // Initialize on Page Load
+        document.addEventListener("DOMContentLoaded", () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                switchTab(hash, false);
+            }
+        });
 
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
@@ -819,4 +913,3 @@
     </script>
 </body>
 </html>
-
