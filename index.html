@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Systems & AI Lab | Academic Research Group</title>
+    <meta name="description" content="Research lab focused on the intersection of Computational Neuroscience and Artificial Intelligence.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for academic layout */
+        .prose-academic p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+            color: #374151;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #1d4ed8;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo / Lab Name -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-bold text-xl sm:text-2xl text-brand-900 tracking-tight flex items-center gap-2">
+                        <i data-lucide="brain-circuit" class="w-8 h-8 text-brand-700"></i>
+                        <span>Neural Systems & AI Lab</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-slate-600 hover:text-brand-700 font-medium">About</a>
+                    <a href="#news" class="nav-link text-slate-600 hover:text-brand-700 font-medium">News</a>
+                    <a href="#research" class="nav-link text-slate-600 hover:text-brand-700 font-medium">Research</a>
+                    <a href="#team" class="nav-link text-slate-600 hover:text-brand-700 font-medium">Team</a>
+                    <a href="#publications" class="nav-link text-slate-600 hover:text-brand-700 font-medium">Publications</a>
+                    <a href="#contact" class="nav-link text-slate-600 hover:text-brand-700 font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-700 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">About</a>
+                <a href="#news" class="block px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">News</a>
+                <a href="#research" class="block px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Research</a>
+                <a href="#team" class="block px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Team</a>
+                <a href="#publications" class="block px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Publications</a>
+                <a href="#contact" class="block px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6 font-serif">
+                    Bridging Biological Minds and <br> <span class="text-brand-700">Artificial Intelligence</span>
+                </h1>
+                <p class="mt-4 text-xl text-slate-600 leading-relaxed">
+                    We are a research group at the <span class="font-semibold text-slate-800">University of Science</span> investigating how the brain processes information and how these principles can build more robust AI systems.
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#publications" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-700 hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition">
+                        Read Our Papers
+                    </a>
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition">
+                        Join the Lab
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Updates -->
+    <section id="news" class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-brand-500 pl-4">Latest News</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                <!-- News Item 1 -->
+                <div class="bg-slate-50 p-6 rounded-lg border border-slate-100">
+                    <span class="text-sm font-semibold text-brand-600">Oct 2023</span>
+                    <h3 class="mt-2 text-lg font-bold text-slate-900">Paper Accepted at NeurIPS</h3>
+                    <p class="mt-2 text-slate-600 text-sm">Our work on "Sparse Coding in RNNs" has been accepted for oral presentation.</p>
+                </div>
+                <!-- News Item 2 -->
+                <div class="bg-slate-50 p-6 rounded-lg border border-slate-100">
+                    <span class="text-sm font-semibold text-brand-600">Sep 2023</span>
+                    <h3 class="mt-2 text-lg font-bold text-slate-900">Welcome New PhD Students</h3>
+                    <p class="mt-2 text-slate-600 text-sm">We are excited to welcome Sarah Chen and David Miller to the group!</p>
+                </div>
+                <!-- News Item 3 -->
+                <div class="bg-slate-50 p-6 rounded-lg border border-slate-100">
+                    <span class="text-sm font-semibold text-brand-600">Aug 2023</span>
+                    <h3 class="mt-2 text-lg font-bold text-slate-900">NSF Grant Awarded</h3>
+                    <p class="mt-2 text-slate-600 text-sm">The lab has received a 3-year grant to study neuromorphic computing architectures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas -->
+    <section id="research" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Research Areas</h2>
+                <p class="mt-4 text-lg text-slate-600">We combine theoretical modeling with data analysis.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Area 1 -->
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="flex-shrink-0 bg-brand-100 rounded-lg p-4">
+                        <i data-lucide="network" class="w-8 h-8 text-brand-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Neural Circuit Dynamics</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            We use dynamical systems theory to understand how populations of neurons coordinate to represent information. Our focus is on attractor dynamics in the prefrontal cortex.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Area 2 -->
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="flex-shrink-0 bg-brand-100 rounded-lg p-4">
+                        <i data-lucide="cpu" class="w-8 h-8 text-brand-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Biologically Plausible AI</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Developing learning algorithms that adhere to local synaptic plasticity rules, offering more energy-efficient alternatives to standard backpropagation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Area 3 -->
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="flex-shrink-0 bg-brand-100 rounded-lg p-4">
+                        <i data-lucide="eye" class="w-8 h-8 text-brand-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Computer Vision & Perception</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Analyzing the hierarchy of the visual ventral stream to improve object recognition robustness in convolutional neural networks.
+                        </p>
+                    </div>
+                </div>
+
+                 <!-- Area 4 -->
+                 <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="flex-shrink-0 bg-brand-100 rounded-lg p-4">
+                        <i data-lucide="activity" class="w-8 h-8 text-brand-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Brain-Computer Interfaces</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Decoding motor intent from neural population activity to drive prosthetic devices with higher degrees of freedom.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 border-l-4 border-brand-500 pl-4">Our Team</h2>
+
+            <!-- Principal Investigator -->
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-slate-500 uppercase tracking-wide mb-6">Principal Investigator</h3>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <div class="w-48 h-48 flex-shrink-0 bg-slate-200 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                        <!-- Placeholder PI Image -->
+                        <div class="w-full h-full flex items-center justify-center bg-brand-50 text-brand-300">
+                             <i data-lucide="user" class="w-24 h-24"></i>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="text-2xl font-bold text-slate-900">Dr. Alex Rivera</h4>
+                        <p class="text-brand-700 font-medium text-lg">Associate Professor of Computer Science</p>
+                        <p class="mt-4 text-slate-600 max-w-2xl prose-academic">
+                            Dr. Rivera leads the Neural Systems lab. He received his PhD from MIT and completed postdoctoral training at Stanford. His work focuses on the intersection of recurrent neural networks and cognitive neuroscience.
+                        </p>
+                        <div class="mt-4 flex justify-center md:justify-start gap-4">
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-slate-100 my-12">
+
+            <!-- Members Grid -->
+            <div>
+                <h3 class="text-xl font-semibold text-slate-500 uppercase tracking-wide mb-8">PhD Students & Researchers</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Member Card 1 -->
+                    <div class="group text-center">
+                        <div class="w-32 h-32 mx-auto bg-slate-100 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i data-lucide="smile" class="w-16 h-16"></i>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-slate-900">Sarah Chen</h4>
+                        <p class="text-sm text-slate-500">PhD Candidate</p>
+                        <p class="text-xs text-brand-600 mt-1">Reinforcement Learning</p>
+                    </div>
+
+                    <!-- Member Card 2 -->
+                    <div class="group text-center">
+                        <div class="w-32 h-32 mx-auto bg-slate-100 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i data-lucide="smile" class="w-16 h-16"></i>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-slate-900">Marcus Johnson</h4>
+                        <p class="text-sm text-slate-500">Postdoctoral Fellow</p>
+                        <p class="text-xs text-brand-600 mt-1">Computational Vision</p>
+                    </div>
+
+                    <!-- Member Card 3 -->
+                    <div class="group text-center">
+                        <div class="w-32 h-32 mx-auto bg-slate-100 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i data-lucide="smile" class="w-16 h-16"></i>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-slate-900">Priya Patel</h4>
+                        <p class="text-sm text-slate-500">PhD Candidate</p>
+                        <p class="text-xs text-brand-600 mt-1">Neuromorphic Hardware</p>
+                    </div>
+
+                    <!-- Member Card 4 -->
+                    <div class="group text-center">
+                        <div class="w-32 h-32 mx-auto bg-slate-100 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i data-lucide="smile" class="w-16 h-16"></i>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-slate-900">James Smith</h4>
+                        <p class="text-sm text-slate-500">Masters Student</p>
+                        <p class="text-xs text-brand-600 mt-1">Data Analysis</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 border-l-4 border-brand-500 pl-4">Selected Publications</h2>
+            
+            <div class="space-y-8">
+                <!-- Publication 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <h3 class="text-lg font-bold text-slate-900">Emergent spatial maps in recurrent neural networks trained on navigation tasks</h3>
+                    <div class="mt-2 text-slate-600">
+                        <span class="font-semibold text-slate-900">Chen, S.</span>, Johnson, M., & Rivera, A. (2024).
+                    </div>
+                    <div class="text-brand-600 italic mt-1">Neural Computation, In Press.</div>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#" class="text-sm px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
+                        <a href="#" class="text-sm px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded transition flex items-center gap-1"><i data-lucide="github" class="w-3 h-3"></i> Code</a>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <h3 class="text-lg font-bold text-slate-900">Local plasticity rules for deep learning in spiking networks</h3>
+                    <div class="mt-2 text-slate-600">
+                        <span class="font-semibold text-slate-900">Rivera, A.</span>, & Patel, P. (2023).
+                    </div>
+                    <div class="text-brand-600 italic mt-1">Proceedings of NeurIPS 2023.</div>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#" class="text-sm px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
+                        <a href="#" class="text-sm px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded transition flex items-center gap-1"><i data-lucide="github" class="w-3 h-3"></i> Code</a>
+                    </div>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <h3 class="text-lg font-bold text-slate-900">A comparative analysis of visual cortex models</h3>
+                    <div class="mt-2 text-slate-600">
+                        Johnson, M., <span class="font-semibold text-slate-900">Rivera, A.</span> (2022).
+                    </div>
+                    <div class="text-brand-600 italic mt-1">Journal of Neuroscience.</div>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#" class="text-sm px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <a href="#" class="text-brand-600 font-semibold hover:text-brand-800">View Full Publication List via Google Scholar &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-brand-400"></i>
+                        Neural Systems & AI Lab
+                    </h2>
+                    <p class="text-slate-400 max-w-sm mb-6">
+                        Advancing the understanding of intelligence in biological and artificial systems.
+                    </p>
+                    <div class="text-slate-400 text-sm">
+                        <p>© 2024 Rivera Lab. All rights reserved.</p>
+                    </div>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                        <address class="text-slate-400 not-italic text-sm space-y-2">
+                            <p>University of Science</p>
+                            <p>Computer Science Department</p>
+                            <p>Building 4, Room 302</p>
+                            <p>123 Research Blvd</p>
+                            <p>City, State 12345</p>
+                        </address>
+                        <p class="mt-4 text-slate-400 text-sm">
+                            <span class="text-brand-400">Email:</span> contact@lab-website.edu
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-4">For Prospective Students</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            We are currently looking for motivated PhD students and postdocs. Please email your CV and a brief statement of interest.
+                        </p>
+                        <a href="#" class="inline-block text-sm font-semibold text-brand-400 hover:text-brand-300">Open Positions &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
