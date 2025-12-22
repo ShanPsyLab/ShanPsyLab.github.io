@@ -25,34 +25,49 @@
                         serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
+                        // Custom Vintage Academic Palette
                         brand: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            500: '#14b8a6', 
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            900: '#134e4a',
+                            50: '#f4f7f4', // Very light green tint
+                            100: '#e3ebe3',
+                            500: '#5c7a5c', // Muted green
+                            600: '#4a634a',
+                            700: '#2F4F4F', // Hunter Green (Primary Brand)
+                            900: '#1a2e2e',
                         },
-                        // Added custom vintage green
-                        vintage: {
-                            800: '#2F4F4F', // Dark Slate Gray / Hunter Green
-                        }
+                        // Warm Neutrals (Replacing Slate/Gray)
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4', // Warm light gray for backgrounds
+                            200: '#e7e5e4', // Borders
+                            500: '#78716c',
+                            600: '#57534e', // Body text
+                            800: '#292524', // Headings
+                            900: '#1c1917',
+                        },
+                        // Cream/Paper Background
+                        cream: '#FDFBF7', 
+                        beige: '#F2EFE9',
                     }
                 }
             }
         }
     </script>
     <style>
+        body {
+            background-color: #FDFBF7; /* Cream background base */
+            color: #57534e; /* Stone-600 text */
+        }
         .prose-academic p {
             margin-bottom: 1.25rem;
             line-height: 1.8;
-            color: #475569;
+            color: #57534e;
         }
         /* Tab Navigation Styles */
         .nav-link {
             position: relative;
             cursor: pointer;
             padding-bottom: 2px;
+            color: #57534e; /* Stone-600 */
         }
         .nav-link::after {
             content: '';
@@ -61,7 +76,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #0f766e;
+            background-color: #2F4F4F; /* Vintage Green */
             transition: width 0.3s;
         }
         .nav-link:hover::after,
@@ -69,8 +84,11 @@
             width: 100%;
         }
         .nav-link.active {
-            color: #0f766e; /* brand-700 */
-            font-weight: 600;
+            color: #2F4F4F; /* Vintage Green */
+            font-weight: 700;
+        }
+        .nav-link:hover {
+            color: #2F4F4F;
         }
         
         /* FIXED: Strict Visibility Control */
@@ -79,62 +97,63 @@
         }
         
         .tab-content.active {
-            animation: fadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.5s ease-in-out;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen">
+<body class="antialiased flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
+    <!-- Changed bg-white to bg-cream/95 for warm feel -->
+    <nav class="fixed w-full bg-[#FDFBF7]/95 backdrop-blur-sm border-b border-stone-200 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <!-- Logo / Lab Name -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="switchTab('home')">
-                    <span class="font-bold text-lg sm:text-xl text-brand-900 tracking-tight flex items-center gap-2">
+                    <span class="font-bold text-lg sm:text-xl text-brand-700 tracking-tight flex items-center gap-2">
                         <!-- CUSTOM SVG LOGO START -->
-                        <svg class="w-8 h-8 text-vintage-800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-8 h-8 text-brand-700" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <!-- Brain Outline -->
                             <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <!-- Neural Network / Social Nodes -->
-                            <circle cx="12" cy="12" r="2" fill="currentColor" class="text-brand-600"/>
-                            <circle cx="12" cy="7" r="1.5" fill="currentColor" class="text-brand-400"/>
-                            <circle cx="16.5" cy="10" r="1.5" fill="currentColor" class="text-brand-400"/>
-                            <circle cx="7.5" cy="10" r="1.5" fill="currentColor" class="text-brand-400"/>
-                            <circle cx="9" cy="16" r="1.5" fill="currentColor" class="text-brand-400"/>
-                            <circle cx="15" cy="16" r="1.5" fill="currentColor" class="text-brand-400"/>
+                            <circle cx="12" cy="12" r="2" fill="currentColor" class="text-brand-700"/>
+                            <circle cx="12" cy="7" r="1.5" fill="currentColor" class="text-brand-500"/>
+                            <circle cx="16.5" cy="10" r="1.5" fill="currentColor" class="text-brand-500"/>
+                            <circle cx="7.5" cy="10" r="1.5" fill="currentColor" class="text-brand-500"/>
+                            <circle cx="9" cy="16" r="1.5" fill="currentColor" class="text-brand-500"/>
+                            <circle cx="15" cy="16" r="1.5" fill="currentColor" class="text-brand-500"/>
                             <!-- Connection Lines -->
-                            <path d="M12 12L12 7" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
-                            <path d="M12 12L16.5 10" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
-                            <path d="M12 12L7.5 10" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
-                            <path d="M12 12L9 16" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
-                            <path d="M12 12L15 16" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
+                            <path d="M12 12L12 7" stroke="currentColor" stroke-width="1.5" class="opacity-40"/>
+                            <path d="M12 12L16.5 10" stroke="currentColor" stroke-width="1.5" class="opacity-40"/>
+                            <path d="M12 12L7.5 10" stroke="currentColor" stroke-width="1.5" class="opacity-40"/>
+                            <path d="M12 12L9 16" stroke="currentColor" stroke-width="1.5" class="opacity-40"/>
+                            <path d="M12 12L15 16" stroke="currentColor" stroke-width="1.5" class="opacity-40"/>
                         </svg>
                         <!-- CUSTOM SVG LOGO END -->
 
                         <!-- [EDIT HERE] Lab Name in Navigation -->
-                        <span class="text-vintage-800">Social Decision Neuroscience Lab</span>
+                        <span class="font-serif">Social Decision Neuroscience Lab</span>
                     </span>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
-                    <button onclick="switchTab('home')" class="nav-link active text-slate-600 hover:text-brand-700 font-medium text-sm uppercase tracking-wide" data-target="home">Home</button>
-                    <button onclick="switchTab('news')" class="nav-link text-slate-600 hover:text-brand-700 font-medium text-sm uppercase tracking-wide" data-target="news">News</button>
-                    <button onclick="switchTab('research')" class="nav-link text-slate-600 hover:text-brand-700 font-medium text-sm uppercase tracking-wide" data-target="research">Research</button>
-                    <button onclick="switchTab('publications')" class="nav-link text-slate-600 hover:text-brand-700 font-medium text-sm uppercase tracking-wide" data-target="publications">Publications</button>
-                    <button onclick="switchTab('team')" class="nav-link text-slate-600 hover:text-brand-700 font-medium text-sm uppercase tracking-wide" data-target="team">Team</button>
-                    <button onclick="switchTab('contact')" class="nav-link text-slate-600 hover:text-brand-700 font-medium text-sm uppercase tracking-wide" data-target="contact">Contact</button>
+                    <button onclick="switchTab('home')" class="nav-link active font-medium text-sm uppercase tracking-wide" data-target="home">Home</button>
+                    <button onclick="switchTab('news')" class="nav-link font-medium text-sm uppercase tracking-wide" data-target="news">News</button>
+                    <button onclick="switchTab('research')" class="nav-link font-medium text-sm uppercase tracking-wide" data-target="research">Research</button>
+                    <button onclick="switchTab('publications')" class="nav-link font-medium text-sm uppercase tracking-wide" data-target="publications">Publications</button>
+                    <button onclick="switchTab('team')" class="nav-link font-medium text-sm uppercase tracking-wide" data-target="team">Team</button>
+                    <button onclick="switchTab('contact')" class="nav-link font-medium text-sm uppercase tracking-wide" data-target="contact">Contact</button>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="flex items-center md:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-700 focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-stone-600 hover:text-brand-700 focus:outline-none">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -142,14 +161,14 @@
         </div>
         
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 fixed w-full top-16 z-40">
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-stone-200 fixed w-full top-16 z-40 shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <button onclick="switchTab('home')" class="block w-full text-left px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Home</button>
-                <button onclick="switchTab('news')" class="block w-full text-left px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">News</button>
-                <button onclick="switchTab('research')" class="block w-full text-left px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Research</button>
-                <button onclick="switchTab('publications')" class="block w-full text-left px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Publications</button>
-                <button onclick="switchTab('team')" class="block w-full text-left px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Team</button>
-                <button onclick="switchTab('contact')" class="block w-full text-left px-3 py-2 text-slate-600 hover:bg-brand-50 hover:text-brand-700 rounded-md font-medium">Contact</button>
+                <button onclick="switchTab('home')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Home</button>
+                <button onclick="switchTab('news')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">News</button>
+                <button onclick="switchTab('research')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Research</button>
+                <button onclick="switchTab('publications')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Publications</button>
+                <button onclick="switchTab('team')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Team</button>
+                <button onclick="switchTab('contact')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Contact</button>
             </div>
         </div>
     </nav>
@@ -158,45 +177,47 @@
     <main class="flex-grow pt-16">
         
         <!-- PAGE: HOME -->
-        <!-- [MODIFIED] Removed 'items-center' to reduce top whitespace, changed padding to 'pt-12' -->
-        <section id="home" class="tab-content active min-h-[calc(100vh-4rem)] flex items-start pt-6 md:pt-16 bg-gradient-to-br from-slate-50 via-white to-brand-50">
+        <!-- Changed gradient to warm beige/cream tones -->
+        <section id="home" class="tab-content active min-h-[calc(100vh-4rem)] flex items-start pt-6 md:pt-16 bg-gradient-to-br from-cream via-beige to-stone-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-vintage-800 uppercase bg-brand-100 rounded-full">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-brand-700 uppercase bg-stone-200 rounded-full">
                             <!-- [EDIT HERE] PI Label -->
                             PI: Shanshan
                         </div>
-                        <!-- [MODIFIED] Applied text-vintage-800 color to the whole title -->
-                        <h1 class="text-4xl md:text-6xl font-extrabold text-vintage-800 tracking-tight mb-6 font-serif leading-tight">
+                        <!-- Use Brand-700 (Vintage Green) for text -->
+                        <h1 class="text-4xl md:text-6xl font-extrabold text-brand-700 tracking-tight mb-6 font-serif leading-tight">
                             <!-- [EDIT HERE] Main Title (Use <br> for line break) -->
                             Social Decision <br> Neuroscience Lab
                         </h1>
-                        <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+                        <p class="mt-4 text-lg text-stone-600 leading-relaxed">
                             <!-- [EDIT HERE] Short intro sentence -->
                             We investigate the cognitive, computational, and neural mechanisms underlying social learning and decision-making.
                         </p>
                         <div class="mt-8 flex gap-4">
-                            <button onclick="switchTab('research')" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-vintage-800 hover:bg-opacity-90 focus:outline-none transition">
+                            <!-- Primary Button: Vintage Green -->
+                            <button onclick="switchTab('research')" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-700 hover:bg-brand-600 focus:outline-none transition">
                                 Our Research
                             </button>
-                            <button onclick="switchTab('news')" class="inline-flex items-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 focus:outline-none transition">
+                            <!-- Secondary Button: Stone Outline -->
+                            <button onclick="switchTab('news')" class="inline-flex items-center px-6 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-beige focus:outline-none transition">
                                 Latest News
                             </button>
                         </div>
                     </div>
                     <div class="relative hidden md:block">
-                        <!-- Abstract Visualization -->
-                        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-                        <div class="absolute top-0 right-0 -mr-10 -mt-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+                        <!-- Abstract Visualization - Adjusted colors to be warmer -->
+                        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
+                        <div class="absolute top-0 right-0 -mr-10 -mt-10 w-96 h-96 bg-stone-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
                         
-                        <div class="relative bg-white p-8 rounded-2xl shadow-xl border border-slate-100 prose-academic">
-                            <h3 class="text-lg font-bold text-vintage-800 mb-4 border-b pb-2">Our Focus</h3>
+                        <div class="relative bg-white/80 backdrop-blur p-8 rounded-2xl shadow-xl border border-stone-100 prose-academic">
+                            <h3 class="text-lg font-bold text-brand-700 mb-4 border-b border-stone-200 pb-2">Our Focus</h3>
                             <!-- [EDIT HERE] Right-side card text -->
-                            <p class="text-sm">
+                            <p class="text-sm text-stone-600">
                                 "How do we understand and predict others’ actions? How do self–other distinctions shape value computation? How do motivational systems modulate social learning?"
                             </p>
-                            <p class="text-sm font-medium text-vintage-800 mt-4">
+                            <p class="text-sm font-medium text-brand-700 mt-4">
                                 &mdash; Combining behavioral paradigms, computational modeling, and neuroimaging.
                             </p>
                         </div>
@@ -206,58 +227,60 @@
         </section>
 
         <!-- PAGE: NEWS -->
-        <section id="news" class="tab-content py-12 md:py-16 bg-white">
+        <!-- Background bg-cream -->
+        <section id="news" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-vintage-800 mb-12 font-serif border-l-4 border-vintage-800 pl-4">Lab News</h2>
+                <h2 class="text-3xl font-bold text-brand-700 mb-12 font-serif border-l-4 border-brand-700 pl-4">Lab News</h2>
                 
                 <div class="space-y-8">
                     <!-- News Item 1 -->
-                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
+                    <!-- Cards use bg-white on top of bg-cream for layering -->
+                    <div class="bg-white p-6 rounded-lg border border-stone-200 shadow-sm flex gap-4 hover:border-brand-500 transition">
                          <div class="flex-shrink-0 w-16 text-center">
                             <!-- [EDIT HERE] News 1: Date -->
-                            <span class="block text-2xl font-bold text-vintage-800">Dec</span>
-                            <span class="block text-sm font-semibold text-slate-500">2025</span>
+                            <span class="block text-2xl font-bold text-brand-600">Dec</span>
+                            <span class="block text-sm font-semibold text-stone-400">2025</span>
                         </div>
                         <div>
                             <!-- [EDIT HERE] News 1: Title -->
-                            <h3 class="text-lg font-bold text-slate-900">Website Launch</h3>
+                            <h3 class="text-lg font-bold text-stone-800">Website Launch</h3>
                             <!-- [EDIT HERE] News 1: Content -->
-                            <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+                            <p class="mt-2 text-stone-600 text-sm leading-relaxed">
                                 Welcome to the new Social Decision Neuroscience Lab website! We are excited to share our research and updates with the community.
                             </p>
                         </div>
                     </div>
 
                     <!-- News Item 2 -->
-                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
+                    <div class="bg-white p-6 rounded-lg border border-stone-200 shadow-sm flex gap-4 hover:border-brand-500 transition">
                         <div class="flex-shrink-0 w-16 text-center">
                            <!-- [EDIT HERE] News 2: Date -->
-                           <span class="block text-2xl font-bold text-vintage-800">Nov</span>
-                           <span class="block text-sm font-semibold text-slate-500">2025</span>
+                           <span class="block text-2xl font-bold text-brand-600">Nov</span>
+                           <span class="block text-sm font-semibold text-stone-400">2025</span>
                        </div>
                        <div>
                            <!-- [EDIT HERE] News 2: Title -->
-                           <h3 class="text-lg font-bold text-slate-900">New Publication in NeuroImage</h3>
+                           <h3 class="text-lg font-bold text-stone-800">New Publication in NeuroImage</h3>
                            <!-- [EDIT HERE] News 2: Content -->
-                           <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+                           <p class="mt-2 text-stone-600 text-sm leading-relaxed">
                                Our paper on pragmatic reasoning in referential communication has been published. Congratulations to the team!
                            </p>
-                           <a href="#" onclick="switchTab('publications')" class="inline-block mt-2 text-xs font-semibold text-vintage-800 hover:underline">Read more in Publications &rarr;</a>
+                           <a href="#" onclick="switchTab('publications')" class="inline-block mt-2 text-xs font-semibold text-brand-700 hover:underline">Read more in Publications &rarr;</a>
                        </div>
                    </div>
 
                    <!-- News Item 3 -->
-                   <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
+                   <div class="bg-white p-6 rounded-lg border border-stone-200 shadow-sm flex gap-4 hover:border-brand-500 transition">
                         <div class="flex-shrink-0 w-16 text-center">
                             <!-- [EDIT HERE] News 3: Date -->
-                            <span class="block text-2xl font-bold text-vintage-800">Sep</span>
-                            <span class="block text-sm font-semibold text-slate-500">2025</span>
+                            <span class="block text-2xl font-bold text-brand-600">Sep</span>
+                            <span class="block text-sm font-semibold text-stone-400">2025</span>
                         </div>
                         <div>
                             <!-- [EDIT HERE] News 3: Title -->
-                            <h3 class="text-lg font-bold text-slate-900">Welcome New PhD Students</h3>
+                            <h3 class="text-lg font-bold text-stone-800">Welcome New PhD Students</h3>
                             <!-- [EDIT HERE] News 3: Content -->
-                            <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+                            <p class="mt-2 text-stone-600 text-sm leading-relaxed">
                                 The lab welcomes our incoming cohort of PhD students. We look forward to the great research ahead!
                             </p>
                         </div>
@@ -267,62 +290,62 @@
         </section>
 
         <!-- PAGE: RESEARCH -->
-        <section id="research" class="tab-content py-12 md:py-16 bg-white">
+        <section id="research" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-bold text-vintage-800 font-serif">Research Lines</h2>
-                    <p class="mt-4 text-lg text-slate-600">Our work combines experimental data with computational theory to bridge the gap between brain and behavior.</p>
+                    <h2 class="text-3xl font-bold text-brand-700 font-serif">Research Lines</h2>
+                    <p class="mt-4 text-lg text-stone-600">Our work combines experimental data with computational theory to bridge the gap between brain and behavior.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-10">
                     <!-- Research Point 1 -->
-                    <div class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition duration-300 border border-slate-100 group">
-                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-vintage-800 mb-6 group-hover:bg-vintage-800 group-hover:text-white transition">
+                    <div class="bg-white p-8 rounded-xl hover:shadow-lg transition duration-300 border border-stone-200 group hover:border-brand-500">
+                        <div class="w-12 h-12 bg-beige rounded-lg shadow-sm flex items-center justify-center text-brand-700 mb-6 group-hover:bg-brand-700 group-hover:text-white transition">
                             <i data-lucide="users" class="w-6 h-6"></i>
                         </div>
                         <!-- [EDIT HERE] Research 1: Title -->
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">1. Social Prediction & Theory of Mind</h3>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">1. Social Prediction & Theory of Mind</h3>
                         <!-- [EDIT HERE] Research 1: Description -->
-                        <p class="text-slate-600 leading-relaxed">
+                        <p class="text-stone-600 leading-relaxed">
                             We examine how people understand and predict others’ actions and intentions. Our research seeks to map the neural architectures that support mentalizing and the simulation of other minds.
                         </p>
                     </div>
 
                     <!-- Research Point 2 -->
-                    <div class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition duration-300 border border-slate-100 group">
-                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-vintage-800 mb-6 group-hover:bg-vintage-800 group-hover:text-white transition">
+                    <div class="bg-white p-8 rounded-xl hover:shadow-lg transition duration-300 border border-stone-200 group hover:border-brand-500">
+                        <div class="w-12 h-12 bg-beige rounded-lg shadow-sm flex items-center justify-center text-brand-700 mb-6 group-hover:bg-brand-700 group-hover:text-white transition">
                             <i data-lucide="scale" class="w-6 h-6"></i>
                         </div>
                         <!-- [EDIT HERE] Research 2: Title -->
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">2. Value Computation & Decision Control</h3>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">2. Value Computation & Decision Control</h3>
                         <!-- [EDIT HERE] Research 2: Description -->
-                        <p class="text-slate-600 leading-relaxed">
+                        <p class="text-stone-600 leading-relaxed">
                             Investigating how self–other distinctions shape value computation. We explore how the brain exerts control over decisions when the outcomes affect others versus oneself.
                         </p>
                     </div>
 
                     <!-- Research Point 3 -->
-                    <div class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition duration-300 border border-slate-100 group">
-                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-vintage-800 mb-6 group-hover:bg-vintage-800 group-hover:text-white transition">
+                    <div class="bg-white p-8 rounded-xl hover:shadow-lg transition duration-300 border border-stone-200 group hover:border-brand-500">
+                        <div class="w-12 h-12 bg-beige rounded-lg shadow-sm flex items-center justify-center text-brand-700 mb-6 group-hover:bg-brand-700 group-hover:text-white transition">
                             <i data-lucide="zap" class="w-6 h-6"></i>
                         </div>
                         <!-- [EDIT HERE] Research 3: Title -->
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">3. Motivation & Learning Strategies</h3>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">3. Motivation & Learning Strategies</h3>
                         <!-- [EDIT HERE] Research 3: Description -->
-                        <p class="text-slate-600 leading-relaxed">
+                        <p class="text-stone-600 leading-relaxed">
                             Studying how motivational systems modulate social learning. We use computational reinforcement learning models to quantify how motivation alters learning rates and exploration strategies.
                         </p>
                     </div>
 
                     <!-- Research Point 4 -->
-                    <div class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition duration-300 border border-slate-100 group">
-                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-vintage-800 mb-6 group-hover:bg-vintage-800 group-hover:text-white transition">
+                    <div class="bg-white p-8 rounded-xl hover:shadow-lg transition duration-300 border border-stone-200 group hover:border-brand-500">
+                        <div class="w-12 h-12 bg-beige rounded-lg shadow-sm flex items-center justify-center text-brand-700 mb-6 group-hover:bg-brand-700 group-hover:text-white transition">
                             <i data-lucide="activity" class="w-6 h-6"></i>
                         </div>
                         <!-- [EDIT HERE] Research 4: Title -->
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">4. Lifespan & Clinical Populations</h3>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">4. Lifespan & Clinical Populations</h3>
                         <!-- [EDIT HERE] Research 4: Description -->
-                        <p class="text-slate-600 leading-relaxed">
+                        <p class="text-stone-600 leading-relaxed">
                             Analyzing how these processes change across the lifespan and in subclinical populations. We aim to identify biomarkers of social cognitive decline or dysfunction.
                         </p>
                     </div>
@@ -331,60 +354,60 @@
         </section>
 
         <!-- PAGE: PUBLICATIONS (SIMPLIFIED) -->
-        <section id="publications" class="tab-content py-12 md:py-16 bg-white">
+        <section id="publications" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-vintage-800 mb-12 font-serif text-center">Selected Publications</h2>
+                <h2 class="text-3xl font-bold text-brand-700 mb-12 font-serif text-center">Selected Publications</h2>
                 
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden p-8">
+                <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden p-8">
                     
                     <!-- Pub 1 -->
-                    <div class="py-4 border-b border-slate-100">
-                        <p class="text-slate-700 leading-relaxed">
-                            <span class="font-bold text-slate-900"><!-- [EDIT HERE] Title -->Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication.</span>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900"><!-- [EDIT HERE] Title -->Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication.</span>
                             <!-- [EDIT HERE] Authors --> <span class="font-semibold">Zhen, S.</span>, Martinez-Saito, M., & Yu, R.
-                            <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->NeuroImage</span>
+                            <span class="italic text-stone-600"><!-- [EDIT HERE] Journal -->NeuroImage</span>
                             <span class="font-semibold"><!-- [EDIT HERE] Year -->(2025).</span>
-                            <a href="https://doi.org/10.1016/j.neuroimage.2024.121022" target="_blank" class="text-vintage-800 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                            <a href="https://doi.org/10.1016/j.neuroimage.2024.121022" target="_blank" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
                         </p>
                     </div>
 
                     <!-- Pub 2 -->
-                    <div class="py-4 border-b border-slate-100">
-                        <p class="text-slate-700 leading-relaxed">
-                            <span class="font-bold text-slate-900"><!-- [EDIT HERE] Title -->Moral characteristics predicting COVID‐19 vaccination.</span>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900"><!-- [EDIT HERE] Title -->Moral characteristics predicting COVID‐19 vaccination.</span>
                             <!-- [EDIT HERE] Authors --> Zher-Wen, <span class="font-semibold">Zhen, S.</span>, & Yu, R.
-                            <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->Journal of Personality</span>
+                            <span class="italic text-stone-600"><!-- [EDIT HERE] Journal -->Journal of Personality</span>
                             <span class="font-semibold"><!-- [EDIT HERE] Year -->(2024).</span>
-                            <a href="#" class="text-vintage-800 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
                         </p>
                     </div>
 
                     <!-- Pub 3 -->
-                    <div class="py-4 border-b border-slate-100">
-                        <p class="text-slate-700 leading-relaxed">
-                            <span class="font-bold text-slate-900"><!-- [EDIT HERE] Title -->The neural underpinnings of allocentric thinking in a novel signaling task.</span>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900"><!-- [EDIT HERE] Title -->The neural underpinnings of allocentric thinking in a novel signaling task.</span>
                             <!-- [EDIT HERE] Authors --> <span class="font-semibold">Zhen, S.</span>, Chowdhury, A., & Yu, R.
-                            <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->NeuroImage</span>
+                            <span class="italic text-stone-600"><!-- [EDIT HERE] Journal -->NeuroImage</span>
                             <span class="font-semibold"><!-- [EDIT HERE] Year -->(2021).</span>
-                            <a href="#" class="text-vintage-800 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
                         </p>
                     </div>
 
                     <!-- Pub 4 -->
-                    <div class="py-4 border-b border-slate-100">
-                        <p class="text-slate-700 leading-relaxed">
-                            <span class="font-bold text-slate-900"><!-- [EDIT HERE] Title -->Distinct neural patterns underlying ingroup and outgroup conformity.</span>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900"><!-- [EDIT HERE] Title -->Distinct neural patterns underlying ingroup and outgroup conformity.</span>
                             <!-- [EDIT HERE] Authors --> Huang, Y., <span class="font-semibold">Zhen, S.</span>, & Yu, R.
-                            <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->PNAS</span>
+                            <span class="italic text-stone-600"><!-- [EDIT HERE] Journal -->PNAS</span>
                             <span class="font-semibold"><!-- [EDIT HERE] Year -->(2019).</span>
-                            <a href="#" class="text-vintage-800 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
                         </p>
                     </div>
 
                 </div>
 
                 <div class="mt-10 text-center">
-                    <a href="https://scholar.google.com.sg/citations?user=EwwV9P0AAAAJ&hl=en&oi=ao" target="_blank" class="inline-flex items-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 focus:outline-none transition gap-2">
+                    <a href="https://scholar.google.com.sg/citations?user=EwwV9P0AAAAJ&hl=en&oi=ao" target="_blank" class="inline-flex items-center px-6 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-beige focus:outline-none transition gap-2">
                         <i data-lucide="book-open" class="w-4 h-4"></i> View Google Scholar Profile
                     </a>
                 </div>
@@ -392,27 +415,27 @@
         </section>
 
         <!-- PAGE: TEAM (MODIFIED: LIST VIEW) -->
-        <section id="team" class="tab-content py-12 md:py-16 bg-white">
+        <section id="team" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-vintage-800 mb-16 font-serif text-center">Our Team</h2>
+                <h2 class="text-3xl font-bold text-brand-700 mb-16 font-serif text-center">Our Team</h2>
 
                 <!-- PI Section (Unchanged) -->
                 <div class="flex flex-col md:flex-row items-center gap-12 mb-20 max-w-5xl mx-auto">
-                    <div class="w-56 h-56 flex-shrink-0 bg-slate-100 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                    <div class="w-56 h-56 flex-shrink-0 bg-stone-100 rounded-full overflow-hidden shadow-xl border-4 border-white">
                         <!-- Placeholder PI Image -->
                         <!-- [EDIT HERE] Upload 'pi.jpg' to GitHub, then change src to 'src="pi.jpg"' -->
-                        <div class="w-full h-full flex items-center justify-center bg-brand-50 text-brand-300">
+                        <div class="w-full h-full flex items-center justify-center bg-beige text-brand-300">
                                 <i data-lucide="user" class="w-24 h-24"></i>
                         </div>
                         <!-- <img src="pi.jpg" class="w-full h-full object-cover"> -->
                     </div>
                     <div class="text-center md:text-left flex-1">
                         <!-- [EDIT HERE] PI Name -->
-                        <h4 class="text-3xl font-bold text-slate-900">Shanshan</h4>
+                        <h4 class="text-3xl font-bold text-stone-900">Shanshan</h4>
                         <!-- [EDIT HERE] PI Title -->
-                        <p class="text-vintage-800 font-semibold text-lg mt-2">Assistant Professor</p>
+                        <p class="text-brand-700 font-semibold text-lg mt-2">Assistant Professor</p>
                         <!-- [EDIT HERE] University -->
-                        <p class="text-slate-500 text-sm mt-1 uppercase tracking-wide font-semibold">City University of Hong Kong</p>
+                        <p class="text-stone-500 text-sm mt-1 uppercase tracking-wide font-semibold">City University of Hong Kong</p>
                         
                         <div class="mt-6 prose-academic">
                             <!-- [EDIT HERE] PI Bio -->
@@ -422,7 +445,7 @@
                         </div>
                         
                         <div class="mt-8 flex justify-center md:justify-start gap-4">
-                            <button onclick="switchTab('contact')" class="inline-flex items-center px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-full transition text-sm font-medium gap-2">
+                            <button onclick="switchTab('contact')" class="inline-flex items-center px-5 py-2.5 bg-brand-700 hover:bg-brand-600 text-white rounded-full transition text-sm font-medium gap-2">
                                 <i data-lucide="mail" class="w-4 h-4"></i> Contact
                             </button>
                         </div>
@@ -431,84 +454,84 @@
 
                 <!-- PhD Students List (NEW LAYOUT) -->
                 <div class="max-w-4xl mx-auto space-y-8">
-                    <h3 class="text-xl font-semibold text-slate-500 uppercase tracking-wide mb-8 border-b border-slate-100 pb-4">PhD Students</h3>
+                    <h3 class="text-xl font-semibold text-stone-500 uppercase tracking-wide mb-8 border-b border-stone-200 pb-4">PhD Students</h3>
                     
                     <!-- PhD Student 1 -->
-                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
-                        <div class="w-32 h-32 flex-shrink-0 bg-white rounded-full overflow-hidden shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
+                        <div class="w-32 h-32 flex-shrink-0 bg-stone-50 rounded-full overflow-hidden shadow-sm border border-stone-100">
                             <!-- [在此修改] 照片链接：上传照片到GitHub，然后把 src="placeholder.jpg" 改成 src="文件名.jpg" -->
                             <!-- 例如：<img src="student1.jpg" class="w-full h-full object-cover"> -->
-                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                            <div class="w-full h-full flex items-center justify-center text-stone-300">
                                 <i data-lucide="user" class="w-16 h-16"></i>
                             </div>
                         </div>
                         <div class="text-center md:text-left flex-1">
                             <!-- [EDIT HERE] Student 1: Name -->
-                            <h4 class="text-xl font-bold text-slate-900">Student Name 1</h4>
+                            <h4 class="text-xl font-bold text-stone-900">Student Name 1</h4>
                             <!-- [EDIT HERE] Student 1: Focus -->
-                            <p class="text-vintage-800 font-medium text-sm mt-1">Research Focus: Computational Modeling</p>
+                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Computational Modeling</p>
                             <!-- [EDIT HERE] Student 1: Bio/Description -->
-                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
                                 Detailed bio goes here. For example: "Interested in how reinforcement learning models can explain social conformity."
                             </p>
                         </div>
                     </div>
 
                     <!-- PhD Student 2 -->
-                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
-                        <div class="w-32 h-32 flex-shrink-0 bg-white rounded-full overflow-hidden shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
+                        <div class="w-32 h-32 flex-shrink-0 bg-stone-50 rounded-full overflow-hidden shadow-sm border border-stone-100">
                             <!-- [在此修改] 照片链接 -->
-                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                            <div class="w-full h-full flex items-center justify-center text-stone-300">
                                 <i data-lucide="user" class="w-16 h-16"></i>
                             </div>
                         </div>
                         <div class="text-center md:text-left flex-1">
                             <!-- [EDIT HERE] Student 2: Name -->
-                            <h4 class="text-xl font-bold text-slate-900">Student Name 2</h4>
+                            <h4 class="text-xl font-bold text-stone-900">Student Name 2</h4>
                             <!-- [EDIT HERE] Student 2: Focus -->
-                            <p class="text-vintage-800 font-medium text-sm mt-1">Research Focus: fMRI & Social Cognition</p>
+                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: fMRI & Social Cognition</p>
                             <!-- [EDIT HERE] Student 2: Bio/Description -->
-                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
                                 Bio goes here. "Investigating the neural substrates of Theory of Mind using multivariate pattern analysis."
                             </p>
                         </div>
                     </div>
 
                     <!-- PhD Student 3 -->
-                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
-                        <div class="w-32 h-32 flex-shrink-0 bg-white rounded-full overflow-hidden shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
+                        <div class="w-32 h-32 flex-shrink-0 bg-stone-50 rounded-full overflow-hidden shadow-sm border border-stone-100">
                             <!-- [在此修改] 照片链接 -->
-                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                            <div class="w-full h-full flex items-center justify-center text-stone-300">
                                 <i data-lucide="user" class="w-16 h-16"></i>
                             </div>
                         </div>
                         <div class="text-center md:text-left flex-1">
                             <!-- [EDIT HERE] Student 3: Name -->
-                            <h4 class="text-xl font-bold text-slate-900">Student Name 3</h4>
+                            <h4 class="text-xl font-bold text-stone-900">Student Name 3</h4>
                             <!-- [EDIT HERE] Student 3: Focus -->
-                            <p class="text-vintage-800 font-medium text-sm mt-1">Research Focus: Decision Making</p>
+                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Decision Making</p>
                             <!-- [EDIT HERE] Student 3: Bio/Description -->
-                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
                                 Bio goes here.
                             </p>
                         </div>
                     </div>
 
                     <!-- PhD Student 4 -->
-                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
-                        <div class="w-32 h-32 flex-shrink-0 bg-white rounded-full overflow-hidden shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
+                        <div class="w-32 h-32 flex-shrink-0 bg-stone-50 rounded-full overflow-hidden shadow-sm border border-stone-100">
                             <!-- [在此修改] 照片链接 -->
-                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                            <div class="w-full h-full flex items-center justify-center text-stone-300">
                                 <i data-lucide="user" class="w-16 h-16"></i>
                             </div>
                         </div>
                         <div class="text-center md:text-left flex-1">
                             <!-- [EDIT HERE] Student 4: Name -->
-                            <h4 class="text-xl font-bold text-slate-900">Student Name 4</h4>
+                            <h4 class="text-xl font-bold text-stone-900">Student Name 4</h4>
                             <!-- [EDIT HERE] Student 4: Focus -->
-                            <p class="text-vintage-800 font-medium text-sm mt-1">Research Focus: Brain Stimulation</p>
+                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Brain Stimulation</p>
                             <!-- [EDIT HERE] Student 4: Bio/Description -->
-                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            <p class="text-stone-600 text-sm mt-3 leading-relaxed">
                                 Bio goes here.
                             </p>
                         </div>
@@ -519,24 +542,24 @@
         </section>
 
         <!-- PAGE: CONTACT -->
-        <section id="contact" class="tab-content py-12 md:py-16 bg-white">
+        <section id="contact" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-vintage-800 mb-8 font-serif text-center">Get in Touch</h2>
+                <h2 class="text-3xl font-bold text-brand-700 mb-8 font-serif text-center">Get in Touch</h2>
                 
-                <div class="bg-slate-50 rounded-2xl p-8 md:p-12 border border-slate-100 shadow-sm text-center">
-                    <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 md:p-12 border border-stone-200 shadow-sm text-center">
+                    <p class="text-lg text-stone-600 mb-8 max-w-2xl mx-auto">
                         <!-- [EDIT HERE] Contact Page Text -->
                         We are always looking for motivated students and collaborators. If you are interested in our work, please don't hesitate to reach out.
                     </p>
                     
                     <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-vintage-800 shadow-sm">
+                            <div class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-brand-700 shadow-sm">
                                 <i data-lucide="map-pin" class="w-5 h-5"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900">Address</h4>
-                                <p class="text-slate-600 text-sm mt-1">
+                                <h4 class="font-bold text-stone-900">Address</h4>
+                                <p class="text-stone-600 text-sm mt-1">
                                     <!-- [EDIT HERE] Address -->
                                     City University of Hong Kong<br>
                                     Tat Chee Avenue<br>
@@ -546,13 +569,13 @@
                         </div>
                         
                         <div class="flex items-start gap-4">
-                             <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-vintage-800 shadow-sm">
+                             <div class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-brand-700 shadow-sm">
                                 <i data-lucide="mail" class="w-5 h-5"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900">Email</h4>
+                                <h4 class="font-bold text-stone-900">Email</h4>
                                 <!-- [EDIT HERE] Email -->
-                                <a href="mailto:email@cityu.edu.hk" class="text-slate-600 text-sm mt-1 hover:text-brand-600 transition">email@cityu.edu.hk</a>
+                                <a href="mailto:email@cityu.edu.hk" class="text-stone-600 text-sm mt-1 hover:text-brand-600 transition">email@cityu.edu.hk</a>
                             </div>
                         </div>
                     </div>
@@ -563,7 +586,7 @@
     </main>
 
     <!-- Global Footer -->
-    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800 mt-auto">
+    <footer class="bg-brand-900 text-stone-300 py-12 border-t border-brand-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             <div class="flex items-center gap-2 mb-4">
                 <!-- CUSTOM SVG LOGO (Footer) -->
@@ -577,17 +600,17 @@
                      <circle cx="15" cy="16" r="1.5" fill="currentColor" class="text-brand-400"/>
                 </svg>
                 <!-- [EDIT HERE] Footer Lab Name -->
-                <span class="text-xl font-bold font-serif">Social Decision Neuroscience Lab</span>
+                <span class="text-xl font-bold font-serif text-brand-50">Social Decision Neuroscience Lab</span>
             </div>
             
             <div class="flex justify-center gap-8 mb-6">
-                 <a href="#" class="text-slate-400 hover:text-white transition"><span class="sr-only">Twitter</span><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                 <a href="#" class="text-slate-400 hover:text-white transition"><span class="sr-only">GitHub</span><i data-lucide="github" class="w-5 h-5"></i></a>
-                 <a href="#" class="text-slate-400 hover:text-white transition"><span class="sr-only">LinkedIn</span><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                 <a href="#" class="text-stone-400 hover:text-white transition"><span class="sr-only">Twitter</span><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                 <a href="#" class="text-stone-400 hover:text-white transition"><span class="sr-only">GitHub</span><i data-lucide="github" class="w-5 h-5"></i></a>
+                 <a href="#" class="text-stone-400 hover:text-white transition"><span class="sr-only">LinkedIn</span><i data-lucide="linkedin" class="w-5 h-5"></i></a>
             </div>
             
             <!-- [EDIT HERE] Footer Copyright -->
-            <p class="text-slate-500 text-sm">© 2025 Shanshan. All rights reserved.</p>
+            <p class="text-stone-500 text-sm">© 2025 Shanshan. All rights reserved.</p>
         </div>
     </footer>
 
