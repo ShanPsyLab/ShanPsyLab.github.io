@@ -32,6 +32,10 @@
                             600: '#0d9488',
                             700: '#0f766e',
                             900: '#134e4a',
+                        },
+                        // Added custom vintage green
+                        vintage: {
+                            800: '#2F4F4F', // Dark Slate Gray / Hunter Green
                         }
                     }
                 }
@@ -93,9 +97,28 @@
                 <!-- Logo / Lab Name -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="switchTab('home')">
                     <span class="font-bold text-lg sm:text-xl text-brand-900 tracking-tight flex items-center gap-2">
-                        <i data-lucide="brain-circuit" class="w-7 h-7 text-brand-600"></i>
+                        <!-- CUSTOM SVG LOGO START -->
+                        <svg class="w-8 h-8 text-vintage-800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Brain Outline -->
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Neural Network / Social Nodes -->
+                            <circle cx="12" cy="12" r="2" fill="currentColor" class="text-brand-600"/>
+                            <circle cx="12" cy="7" r="1.5" fill="currentColor" class="text-brand-400"/>
+                            <circle cx="16.5" cy="10" r="1.5" fill="currentColor" class="text-brand-400"/>
+                            <circle cx="7.5" cy="10" r="1.5" fill="currentColor" class="text-brand-400"/>
+                            <circle cx="9" cy="16" r="1.5" fill="currentColor" class="text-brand-400"/>
+                            <circle cx="15" cy="16" r="1.5" fill="currentColor" class="text-brand-400"/>
+                            <!-- Connection Lines -->
+                            <path d="M12 12L12 7" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
+                            <path d="M12 12L16.5 10" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
+                            <path d="M12 12L7.5 10" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
+                            <path d="M12 12L9 16" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
+                            <path d="M12 12L15 16" stroke="currentColor" stroke-width="1.5" class="opacity-50"/>
+                        </svg>
+                        <!-- CUSTOM SVG LOGO END -->
+
                         <!-- [EDIT HERE] Lab Name in Navigation -->
-                        <span>Social Decision Neuroscience Lab</span>
+                        <span class="text-vintage-800">Social Decision Neuroscience Lab</span>
                     </span>
                 </div>
                 
@@ -135,24 +158,26 @@
     <main class="flex-grow pt-16">
         
         <!-- PAGE: HOME -->
-        <section id="home" class="tab-content active min-h-[calc(100vh-4rem)] flex items-center bg-gradient-to-br from-slate-50 via-white to-brand-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-24">
+        <!-- [MODIFIED] Removed 'items-center' to reduce top whitespace, changed padding to 'pt-12' -->
+        <section id="home" class="tab-content active min-h-[calc(100vh-4rem)] flex items-start pt-6 md:pt-16 bg-gradient-to-br from-slate-50 via-white to-brand-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-brand-700 uppercase bg-brand-100 rounded-full">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-vintage-800 uppercase bg-brand-100 rounded-full">
                             <!-- [EDIT HERE] PI Label -->
                             PI: Shanshan
                         </div>
-                        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 font-serif leading-tight">
+                        <!-- [MODIFIED] Applied text-vintage-800 color to the whole title -->
+                        <h1 class="text-4xl md:text-6xl font-extrabold text-vintage-800 tracking-tight mb-6 font-serif leading-tight">
                             <!-- [EDIT HERE] Main Title (Use <br> for line break) -->
-                            Social Decision <br> <span class="text-brand-600">Neuroscience Lab</span>
+                            Social Decision <br> Neuroscience Lab
                         </h1>
                         <p class="mt-4 text-lg text-slate-600 leading-relaxed">
                             <!-- [EDIT HERE] Short intro sentence -->
                             We investigate the cognitive, computational, and neural mechanisms underlying social learning and decision-making.
                         </p>
                         <div class="mt-8 flex gap-4">
-                            <button onclick="switchTab('research')" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-700 hover:bg-brand-800 focus:outline-none transition">
+                            <button onclick="switchTab('research')" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-vintage-800 hover:bg-opacity-90 focus:outline-none transition">
                                 Our Research
                             </button>
                             <button onclick="switchTab('news')" class="inline-flex items-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 focus:outline-none transition">
@@ -166,12 +191,12 @@
                         <div class="absolute top-0 right-0 -mr-10 -mt-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
                         
                         <div class="relative bg-white p-8 rounded-2xl shadow-xl border border-slate-100 prose-academic">
-                            <h3 class="text-lg font-bold text-slate-900 mb-4 border-b pb-2">Our Focus</h3>
+                            <h3 class="text-lg font-bold text-vintage-800 mb-4 border-b pb-2">Our Focus</h3>
                             <!-- [EDIT HERE] Right-side card text -->
                             <p class="text-sm">
                                 "How do we understand and predict others’ actions? How do self–other distinctions shape value computation? How do motivational systems modulate social learning?"
                             </p>
-                            <p class="text-sm font-medium text-brand-700 mt-4">
+                            <p class="text-sm font-medium text-vintage-800 mt-4">
                                 &mdash; Combining behavioral paradigms, computational modeling, and neuroimaging.
                             </p>
                         </div>
@@ -181,16 +206,16 @@
         </section>
 
         <!-- PAGE: NEWS -->
-        <section id="news" class="tab-content py-24 bg-white">
+        <section id="news" class="tab-content py-12 md:py-16 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-slate-900 mb-12 font-serif border-l-4 border-brand-500 pl-4">Lab News</h2>
+                <h2 class="text-3xl font-bold text-vintage-800 mb-12 font-serif border-l-4 border-vintage-800 pl-4">Lab News</h2>
                 
                 <div class="space-y-8">
                     <!-- News Item 1 -->
                     <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
                          <div class="flex-shrink-0 w-16 text-center">
                             <!-- [EDIT HERE] News 1: Date -->
-                            <span class="block text-2xl font-bold text-brand-600">Dec</span>
+                            <span class="block text-2xl font-bold text-vintage-800">Dec</span>
                             <span class="block text-sm font-semibold text-slate-500">2025</span>
                         </div>
                         <div>
@@ -207,7 +232,7 @@
                     <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
                         <div class="flex-shrink-0 w-16 text-center">
                            <!-- [EDIT HERE] News 2: Date -->
-                           <span class="block text-2xl font-bold text-brand-600">Nov</span>
+                           <span class="block text-2xl font-bold text-vintage-800">Nov</span>
                            <span class="block text-sm font-semibold text-slate-500">2025</span>
                        </div>
                        <div>
@@ -217,7 +242,7 @@
                            <p class="mt-2 text-slate-600 text-sm leading-relaxed">
                                Our paper on pragmatic reasoning in referential communication has been published. Congratulations to the team!
                            </p>
-                           <a href="#" onclick="switchTab('publications')" class="inline-block mt-2 text-xs font-semibold text-brand-700 hover:underline">Read more in Publications &rarr;</a>
+                           <a href="#" onclick="switchTab('publications')" class="inline-block mt-2 text-xs font-semibold text-vintage-800 hover:underline">Read more in Publications &rarr;</a>
                        </div>
                    </div>
 
@@ -225,7 +250,7 @@
                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 flex gap-4">
                         <div class="flex-shrink-0 w-16 text-center">
                             <!-- [EDIT HERE] News 3: Date -->
-                            <span class="block text-2xl font-bold text-brand-600">Sep</span>
+                            <span class="block text-2xl font-bold text-vintage-800">Sep</span>
                             <span class="block text-sm font-semibold text-slate-500">2025</span>
                         </div>
                         <div>
@@ -242,17 +267,17 @@
         </section>
 
         <!-- PAGE: RESEARCH -->
-        <section id="research" class="tab-content py-24 bg-white">
+        <section id="research" class="tab-content py-12 md:py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-bold text-slate-900 font-serif">Research Lines</h2>
+                    <h2 class="text-3xl font-bold text-vintage-800 font-serif">Research Lines</h2>
                     <p class="mt-4 text-lg text-slate-600">Our work combines experimental data with computational theory to bridge the gap between brain and behavior.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-10">
                     <!-- Research Point 1 -->
                     <div class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition duration-300 border border-slate-100 group">
-                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition">
+                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-vintage-800 mb-6 group-hover:bg-vintage-800 group-hover:text-white transition">
                             <i data-lucide="users" class="w-6 h-6"></i>
                         </div>
                         <!-- [EDIT HERE] Research 1: Title -->
@@ -265,7 +290,7 @@
 
                     <!-- Research Point 2 -->
                     <div class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition duration-300 border border-slate-100 group">
-                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition">
+                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-vintage-800 mb-6 group-hover:bg-vintage-800 group-hover:text-white transition">
                             <i data-lucide="scale" class="w-6 h-6"></i>
                         </div>
                         <!-- [EDIT HERE] Research 2: Title -->
@@ -278,7 +303,7 @@
 
                     <!-- Research Point 3 -->
                     <div class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition duration-300 border border-slate-100 group">
-                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition">
+                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-vintage-800 mb-6 group-hover:bg-vintage-800 group-hover:text-white transition">
                             <i data-lucide="zap" class="w-6 h-6"></i>
                         </div>
                         <!-- [EDIT HERE] Research 3: Title -->
@@ -291,7 +316,7 @@
 
                     <!-- Research Point 4 -->
                     <div class="bg-slate-50 p-8 rounded-xl hover:shadow-lg transition duration-300 border border-slate-100 group">
-                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition">
+                        <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-vintage-800 mb-6 group-hover:bg-vintage-800 group-hover:text-white transition">
                             <i data-lucide="activity" class="w-6 h-6"></i>
                         </div>
                         <!-- [EDIT HERE] Research 4: Title -->
@@ -306,9 +331,9 @@
         </section>
 
         <!-- PAGE: PUBLICATIONS (SIMPLIFIED) -->
-        <section id="publications" class="tab-content py-24 bg-white">
+        <section id="publications" class="tab-content py-12 md:py-16 bg-white">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-slate-900 mb-12 font-serif text-center">Selected Publications</h2>
+                <h2 class="text-3xl font-bold text-vintage-800 mb-12 font-serif text-center">Selected Publications</h2>
                 
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden p-8">
                     
@@ -319,7 +344,7 @@
                             <!-- [EDIT HERE] Authors --> <span class="font-semibold">Zhen, S.</span>, Martinez-Saito, M., & Yu, R.
                             <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->NeuroImage</span>
                             <span class="font-semibold"><!-- [EDIT HERE] Year -->(2025).</span>
-                            <a href="https://doi.org/10.1016/j.neuroimage.2024.121022" target="_blank" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                            <a href="https://doi.org/10.1016/j.neuroimage.2024.121022" target="_blank" class="text-vintage-800 hover:underline ml-1 text-sm font-bold">[PDF]</a>
                         </p>
                     </div>
 
@@ -330,7 +355,7 @@
                             <!-- [EDIT HERE] Authors --> Zher-Wen, <span class="font-semibold">Zhen, S.</span>, & Yu, R.
                             <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->Journal of Personality</span>
                             <span class="font-semibold"><!-- [EDIT HERE] Year -->(2024).</span>
-                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                            <a href="#" class="text-vintage-800 hover:underline ml-1 text-sm font-bold">[PDF]</a>
                         </p>
                     </div>
 
@@ -341,7 +366,7 @@
                             <!-- [EDIT HERE] Authors --> <span class="font-semibold">Zhen, S.</span>, Chowdhury, A., & Yu, R.
                             <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->NeuroImage</span>
                             <span class="font-semibold"><!-- [EDIT HERE] Year -->(2021).</span>
-                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                            <a href="#" class="text-vintage-800 hover:underline ml-1 text-sm font-bold">[PDF]</a>
                         </p>
                     </div>
 
@@ -352,7 +377,7 @@
                             <!-- [EDIT HERE] Authors --> Huang, Y., <span class="font-semibold">Zhen, S.</span>, & Yu, R.
                             <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->PNAS</span>
                             <span class="font-semibold"><!-- [EDIT HERE] Year -->(2019).</span>
-                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                            <a href="#" class="text-vintage-800 hover:underline ml-1 text-sm font-bold">[PDF]</a>
                         </p>
                     </div>
 
@@ -367,9 +392,9 @@
         </section>
 
         <!-- PAGE: TEAM (MODIFIED: LIST VIEW) -->
-        <section id="team" class="tab-content py-24 bg-white">
+        <section id="team" class="tab-content py-12 md:py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-slate-900 mb-16 font-serif text-center">Our Team</h2>
+                <h2 class="text-3xl font-bold text-vintage-800 mb-16 font-serif text-center">Our Team</h2>
 
                 <!-- PI Section (Unchanged) -->
                 <div class="flex flex-col md:flex-row items-center gap-12 mb-20 max-w-5xl mx-auto">
@@ -385,7 +410,7 @@
                         <!-- [EDIT HERE] PI Name -->
                         <h4 class="text-3xl font-bold text-slate-900">Shanshan</h4>
                         <!-- [EDIT HERE] PI Title -->
-                        <p class="text-brand-600 font-semibold text-lg mt-2">Assistant Professor</p>
+                        <p class="text-vintage-800 font-semibold text-lg mt-2">Assistant Professor</p>
                         <!-- [EDIT HERE] University -->
                         <p class="text-slate-500 text-sm mt-1 uppercase tracking-wide font-semibold">City University of Hong Kong</p>
                         
@@ -421,7 +446,7 @@
                             <!-- [EDIT HERE] Student 1: Name -->
                             <h4 class="text-xl font-bold text-slate-900">Student Name 1</h4>
                             <!-- [EDIT HERE] Student 1: Focus -->
-                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Computational Modeling</p>
+                            <p class="text-vintage-800 font-medium text-sm mt-1">Research Focus: Computational Modeling</p>
                             <!-- [EDIT HERE] Student 1: Bio/Description -->
                             <p class="text-slate-600 text-sm mt-3 leading-relaxed">
                                 Detailed bio goes here. For example: "Interested in how reinforcement learning models can explain social conformity."
@@ -441,7 +466,7 @@
                             <!-- [EDIT HERE] Student 2: Name -->
                             <h4 class="text-xl font-bold text-slate-900">Student Name 2</h4>
                             <!-- [EDIT HERE] Student 2: Focus -->
-                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: fMRI & Social Cognition</p>
+                            <p class="text-vintage-800 font-medium text-sm mt-1">Research Focus: fMRI & Social Cognition</p>
                             <!-- [EDIT HERE] Student 2: Bio/Description -->
                             <p class="text-slate-600 text-sm mt-3 leading-relaxed">
                                 Bio goes here. "Investigating the neural substrates of Theory of Mind using multivariate pattern analysis."
@@ -461,7 +486,7 @@
                             <!-- [EDIT HERE] Student 3: Name -->
                             <h4 class="text-xl font-bold text-slate-900">Student Name 3</h4>
                             <!-- [EDIT HERE] Student 3: Focus -->
-                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Decision Making</p>
+                            <p class="text-vintage-800 font-medium text-sm mt-1">Research Focus: Decision Making</p>
                             <!-- [EDIT HERE] Student 3: Bio/Description -->
                             <p class="text-slate-600 text-sm mt-3 leading-relaxed">
                                 Bio goes here.
@@ -481,7 +506,7 @@
                             <!-- [EDIT HERE] Student 4: Name -->
                             <h4 class="text-xl font-bold text-slate-900">Student Name 4</h4>
                             <!-- [EDIT HERE] Student 4: Focus -->
-                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Brain Stimulation</p>
+                            <p class="text-vintage-800 font-medium text-sm mt-1">Research Focus: Brain Stimulation</p>
                             <!-- [EDIT HERE] Student 4: Bio/Description -->
                             <p class="text-slate-600 text-sm mt-3 leading-relaxed">
                                 Bio goes here.
@@ -494,9 +519,9 @@
         </section>
 
         <!-- PAGE: CONTACT -->
-        <section id="contact" class="tab-content py-24 bg-white">
+        <section id="contact" class="tab-content py-12 md:py-16 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-slate-900 mb-8 font-serif text-center">Get in Touch</h2>
+                <h2 class="text-3xl font-bold text-vintage-800 mb-8 font-serif text-center">Get in Touch</h2>
                 
                 <div class="bg-slate-50 rounded-2xl p-8 md:p-12 border border-slate-100 shadow-sm text-center">
                     <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
@@ -506,7 +531,7 @@
                     
                     <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-600 shadow-sm">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-vintage-800 shadow-sm">
                                 <i data-lucide="map-pin" class="w-5 h-5"></i>
                             </div>
                             <div>
@@ -521,7 +546,7 @@
                         </div>
                         
                         <div class="flex items-start gap-4">
-                             <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-600 shadow-sm">
+                             <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-vintage-800 shadow-sm">
                                 <i data-lucide="mail" class="w-5 h-5"></i>
                             </div>
                             <div>
@@ -541,7 +566,16 @@
     <footer class="bg-slate-900 text-white py-12 border-t border-slate-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             <div class="flex items-center gap-2 mb-4">
-                <i data-lucide="brain-circuit" class="w-6 h-6 text-brand-500"></i>
+                <!-- CUSTOM SVG LOGO (Footer) -->
+                <svg class="w-6 h-6 text-brand-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                     <circle cx="12" cy="12" r="2" fill="currentColor" class="text-brand-600"/>
+                     <circle cx="12" cy="7" r="1.5" fill="currentColor" class="text-brand-400"/>
+                     <circle cx="16.5" cy="10" r="1.5" fill="currentColor" class="text-brand-400"/>
+                     <circle cx="7.5" cy="10" r="1.5" fill="currentColor" class="text-brand-400"/>
+                     <circle cx="9" cy="16" r="1.5" fill="currentColor" class="text-brand-400"/>
+                     <circle cx="15" cy="16" r="1.5" fill="currentColor" class="text-brand-400"/>
+                </svg>
                 <!-- [EDIT HERE] Footer Lab Name -->
                 <span class="text-xl font-bold font-serif">Social Decision Neuroscience Lab</span>
             </div>
@@ -604,4 +638,3 @@
     </script>
 </body>
 </html>
-
