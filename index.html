@@ -366,402 +366,214 @@
             </div>
         </section>
 
-        <!-- PAGE: PUBLICATIONS (COLLAPSIBLE / EXPANDABLE) -->
+        <!-- PAGE: PUBLICATIONS (SIMPLIFIED & INLINE) -->
         <section id="publications" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-brand-700 mb-12 font-serif text-center">Selected Publications</h2>
+                <h2 class="text-3xl font-bold text-brand-700 mb-6 font-serif text-center">Selected Publications</h2>
+                
+                <!-- Google Scholar Link (Moved Here) -->
+                <div class="text-center mb-10">
+                    <a href="https://scholar.google.com.sg/citations?user=EwwV9P0AAAAJ&hl=en&oi=ao" target="_blank" class="inline-flex items-center px-6 py-2 border border-stone-300 text-sm font-medium rounded-full text-stone-700 bg-white hover:bg-stone-50 transition gap-2 shadow-sm">
+                        <i data-lucide="book-open" class="w-4 h-4"></i> View Google Scholar Profile
+                    </a>
+                </div>
                 
                 <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden p-8">
                     
-                    <!-- Explanation Text -->
-                    <div class="mb-6 text-sm text-stone-500 italic text-center">
-                        * Click on a publication to view the abstract.
-                    </div>
+                    <!-- 
+                        ========================================
+                        [TEMPLATE] ADD NEW PAPER / COPY THIS BLOCK
+                        ========================================
+                        <div class="py-4 border-b border-stone-100">
+                            <p class="text-stone-700 leading-relaxed">
+                                <span class="font-bold text-stone-900">Author, A., & Author, B. (Year).</span>
+                                Title of the paper.
+                                <span class="italic text-stone-600">Journal Name</span>, Volume(Issue), Pages.
+                                <a href="LINK_TO_PDF" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                            </p>
+                        </div>
+                    -->
 
                     <!-- Pub 1 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S.*, Martinez-Saito, M., & Yu, R. (2025).</span>
-                                Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication.
-                                <span class="italic text-stone-600">NeuroImage</span>, 121022.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1016/j.neuroimage.2025.121022" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S.*, Martinez-Saito, M., & Yu, R. (2025).</span>
+                            Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication.
+                            <span class="italic text-stone-600">NeuroImage</span>, 121022.
+                            <a href="https://doi.org/10.1016/j.neuroimage.2025.121022" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 2 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zher-Wen, Zhen, S., & Yu, R. (2024).</span>
-                                Moral characteristics underlying COVID-19 vaccination.
-                                <span class="italic text-stone-600">Journal of Personality</span>, 92, 820–836.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1111/jopy.12892" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zher-Wen, Zhen, S., & Yu, R. (2024).</span>
+                            Moral characteristics underlying COVID-19 vaccination.
+                            <span class="italic text-stone-600">Journal of Personality</span>, 92, 820–836.
+                            <a href="https://doi.org/10.1111/jopy.12892" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 3 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Lau, P. W., Song, H., Song, D., Wang, J. J., Zhen, S., Shi, L., & Yu, R. (2024).</span>
-                                24‐hour movement behaviors and executive functions in preschoolers: a compositional and isotemporal reallocation analysis.
-                                <span class="italic text-stone-600">Child Development</span>, 95(2), e110-e121.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1111/cdev.14013" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Lau, P. W., Song, H., Song, D., Wang, J. J., Zhen, S., Shi, L., & Yu, R. (2024).</span>
+                            24‐hour movement behaviors and executive functions in preschoolers: a compositional and isotemporal reallocation analysis.
+                            <span class="italic text-stone-600">Child Development</span>, 95(2), e110-e121.
+                            <a href="https://doi.org/10.1111/cdev.14013" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 4 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Varma, M., Zhen, S.*, & Yu, R.* (2023).</span>
-                                Not all discounts are created equal: regional activity and brain networks in temporal and effort discounting.
-                                <span class="italic text-stone-600">NeuroImage</span>, 280, 120363.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1016/j.neuroimage.2023.120363" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Varma, M., Zhen, S.*, & Yu, R.* (2023).</span>
+                            Not all discounts are created equal: regional activity and brain networks in temporal and effort discounting.
+                            <span class="italic text-stone-600">NeuroImage</span>, 280, 120363.
+                            <a href="https://doi.org/10.1016/j.neuroimage.2023.120363" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 5 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2022).</span>
-                                Social motives in children: Greed and fear in a social bargaining game.
-                                <span class="italic text-stone-600">Journal of Behavioral Decision Making</span>, e2305.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1002/bdm.2305" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2022).</span>
+                            Social motives in children: Greed and fear in a social bargaining game.
+                            <span class="italic text-stone-600">Journal of Behavioral Decision Making</span>, e2305.
+                            <a href="https://doi.org/10.1002/bdm.2305" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 6 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Wang, R., Zhen, S., Zhou, C., & Yu, R. (2022).</span>
-                                Acute stress promotes brain network integration and reduces state transition variability.
-                                <span class="italic text-stone-600">Proceedings of the National Academy of Sciences</span>, 119(24), e2204144119.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1073/pnas.2204144119" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Wang, R., Zhen, S., Zhou, C., & Yu, R. (2022).</span>
+                            Acute stress promotes brain network integration and reduces state transition variability.
+                            <span class="italic text-stone-600">Proceedings of the National Academy of Sciences</span>, 119(24), e2204144119.
+                            <a href="https://doi.org/10.1073/pnas.2204144119" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 7 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2022).</span>
-                                Spontaneous dishonesty does not specifically engage the perigenual anterior cingulate cortex.
-                                <span class="italic text-stone-600">Proceedings of the National Academy of Sciences</span>, 119(27), e2201445119.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1073/pnas.2201445119" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2022).</span>
+                            Spontaneous dishonesty does not specifically engage the perigenual anterior cingulate cortex.
+                            <span class="italic text-stone-600">Proceedings of the National Academy of Sciences</span>, 119(27), e2201445119.
+                            <a href="https://doi.org/10.1073/pnas.2201445119" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 8 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S., Yaple, Z. A., Eickhoff, S. B., & Yu, R. (2022).</span>
-                                To learn or to gain: neural signatures of exploration in human decision-making.
-                                <span class="italic text-stone-600">Brain Structure and Function</span>, 227(1), 63-76.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1007/s00429-021-02389-3" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S., Yaple, Z. A., Eickhoff, S. B., & Yu, R. (2022).</span>
+                            To learn or to gain: neural signatures of exploration in human decision-making.
+                            <span class="italic text-stone-600">Brain Structure and Function</span>, 227(1), 63-76.
+                            <a href="https://doi.org/10.1007/s00429-021-02389-3" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 9 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S., Chowdhury, A., & Yu, R. (2021).</span>
-                                The neural underpinnings of allocentric thinking in a novel signaling task.
-                                <span class="italic text-stone-600">NeuroImage</span>, 117808.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1016/j.neuroimage.2021.117808" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S., Chowdhury, A., & Yu, R. (2021).</span>
+                            The neural underpinnings of allocentric thinking in a novel signaling task.
+                            <span class="italic text-stone-600">NeuroImage</span>, 117808.
+                            <a href="https://doi.org/10.1016/j.neuroimage.2021.117808" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 10 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2021).</span>
-                                Neural correlates of recursive thinking during interpersonal strategic interactions.
-                                <span class="italic text-stone-600">Human Brain Mapping</span>, 42(7), 2128-2146.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1002/hbm.25355" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2021).</span>
+                            Neural correlates of recursive thinking during interpersonal strategic interactions.
+                            <span class="italic text-stone-600">Human Brain Mapping</span>, 42(7), 2128-2146.
+                            <a href="https://doi.org/10.1002/hbm.25355" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 11 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Herff, S. A., Zhen, S., Yu, R., & Agres, K. R. (2020).</span>
-                                Age-dependent statistical learning trajectories reveal differences in information weighting.
-                                <span class="italic text-stone-600">Psychology and Aging</span>, 35(8), 1090.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="http://dx.doi.org/10.1037/pag0000567" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Herff, S. A., Zhen, S., Yu, R., & Agres, K. R. (2020).</span>
+                            Age-dependent statistical learning trajectories reveal differences in information weighting.
+                            <span class="italic text-stone-600">Psychology and Aging</span>, 35(8), 1090.
+                            <a href="http://dx.doi.org/10.1037/pag0000567" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 12 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Huang, Y., Zhen, S., & Yu, R. (2019).</span>
-                                Distinct neural patterns underlying ingroup and outgroup conformity.
-                                <span class="italic text-stone-600">Proceedings of the National Academy of Sciences</span>, 116(11), 4758-4759.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1073/pnas.1819421116" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Huang, Y., Zhen, S., & Yu, R. (2019).</span>
+                            Distinct neural patterns underlying ingroup and outgroup conformity.
+                            <span class="italic text-stone-600">Proceedings of the National Academy of Sciences</span>, 116(11), 4758-4759.
+                            <a href="https://doi.org/10.1073/pnas.1819421116" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 13 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Pornpattananangkul, N., Zhen, S., & Yu, R. (2018).</span>
-                                Common and distinct neural correlates of self‐serving and prosocial dishonesty.
-                                <span class="italic text-stone-600">Human Brain Mapping</span>, 39(7), 3086-3103.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1002/hbm.24062" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Pornpattananangkul, N., Zhen, S., & Yu, R. (2018).</span>
+                            Common and distinct neural correlates of self‐serving and prosocial dishonesty.
+                            <span class="italic text-stone-600">Human Brain Mapping</span>, 39(7), 3086-3103.
+                            <a href="https://doi.org/10.1002/hbm.24062" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 14 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Wang, S., Yu, R., Tyszka, M., Zhen, S., et al. (2017).</span>
-                                The human amygdala parametrically encodes the intensity of specific facial emotions and their categorical ambiguity.
-                                <span class="italic text-stone-600">Nature Communications</span>, 8, 14821.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1038/ncomms14821" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Wang, S., Yu, R., Tyszka, M., Zhen, S., et al. (2017).</span>
+                            The human amygdala parametrically encodes the intensity of specific facial emotions and their categorical ambiguity.
+                            <span class="italic text-stone-600">Nature Communications</span>, 8, 14821.
+                            <a href="https://doi.org/10.1038/ncomms14821" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 15 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Sun, S., Zhen, S., Fu, Z., Wu, D., Shimojo, S., Adolphs, R., Yu, R., & Wang, S. (2017).</span>
-                                Decision ambiguity is mediated by a late positive potential originating from cingulate cortex.
-                                <span class="italic text-stone-600">NeuroImage</span>, 157, 400-414.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1016/j.neuroimage.2017.06.003" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Sun, S., Zhen, S., Fu, Z., Wu, D., Shimojo, S., Adolphs, R., Yu, R., & Wang, S. (2017).</span>
+                            Decision ambiguity is mediated by a late positive potential originating from cingulate cortex.
+                            <span class="italic text-stone-600">NeuroImage</span>, 157, 400-414.
+                            <a href="https://doi.org/10.1016/j.neuroimage.2017.06.003" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 16 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2016).</span>
-                                All framing effects are not created equal: Low convergent validity between two classic measurements of framing.
-                                <span class="italic text-stone-600">Scientific Reports</span>, 6, 30071.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1038/srep30071" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2016).</span>
+                            All framing effects are not created equal: Low convergent validity between two classic measurements of framing.
+                            <span class="italic text-stone-600">Scientific Reports</span>, 6, 30071.
+                            <a href="https://doi.org/10.1038/srep30071" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 17 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2016).</span>
-                                The development of the asymmetrically dominated decoy effect in young children.
-                                <span class="italic text-stone-600">Scientific Reports</span>, 6, 22678.
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1038/srep22678" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2016).</span>
+                            The development of the asymmetrically dominated decoy effect in young children.
+                            <span class="italic text-stone-600">Scientific Reports</span>, 6, 22678.
+                            <a href="https://doi.org/10.1038/srep22678" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
                     <!-- Pub 18 -->
-                    <details class="group py-4 border-b border-stone-100 cursor-pointer">
-                        <summary class="list-none text-stone-700 leading-relaxed font-medium hover:text-brand-700 transition flex justify-between items-baseline">
-                            <span>
-                                <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2016).</span>
-                                Tend to compare and tend to be fair: the relationship between social comparison sensitivity and justice sensitivity.
-                                <span class="italic text-stone-600">PLoS One</span>, 11(5).
-                            </span>
-                            <span class="text-xs text-stone-400 ml-2 group-open:rotate-180 transition-transform">▼</span>
-                        </summary>
-                        <div class="mt-3 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <p class="font-bold mb-1 text-stone-800 uppercase tracking-wider text-xs">Abstract</p>
-                            <p>Paste abstract here...</p>
-                            <div class="mt-3 pt-3 border-t border-stone-200">
-                                <a href="https://doi.org/10.1371/journal.pone.0155414" target="_blank" class="inline-flex items-center text-brand-700 hover:underline font-bold text-xs gap-1">
-                                    <i data-lucide="file-text" class="w-3 h-3"></i> DOWNLOAD PDF
-                                </a>
-                            </div>
-                        </div>
-                    </details>
+                    <div class="py-4 border-b border-stone-100">
+                        <p class="text-stone-700 leading-relaxed">
+                            <span class="font-bold text-stone-900">Zhen, S., & Yu, R. (2016).</span>
+                            Tend to compare and tend to be fair: the relationship between social comparison sensitivity and justice sensitivity.
+                            <span class="italic text-stone-600">PLoS One</span>, 11(5).
+                            <a href="https://doi.org/10.1371/journal.pone.0155414" target="_blank" class="text-brand-700 hover:underline font-bold text-xs ml-2">[PDF]</a>
+                        </p>
+                    </div>
 
-                </div>
-
-                <div class="mt-10 text-center">
-                    <a href="https://scholar.google.com.sg/citations?user=EwwV9P0AAAAJ&hl=en&oi=ao" target="_blank" class="inline-flex items-center px-6 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-beige focus:outline-none transition gap-2">
-                        <i data-lucide="book-open" class="w-4 h-4"></i> View Google Scholar Profile
-                    </a>
                 </div>
             </div>
         </section>
