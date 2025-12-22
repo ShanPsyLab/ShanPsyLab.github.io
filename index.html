@@ -70,14 +70,11 @@
         }
         
         /* FIXED: Strict Visibility Control */
-        /* This rule forces the element to hide if it DOES NOT have the 'active' class */
-        /* Using !important overrides Tailwind's display classes (like flex/grid) */
         .tab-content:not(.active) {
             display: none !important;
         }
         
         .tab-content.active {
-            /* We don't force display:block here so that flex/grid layouts work naturally */
             animation: fadeIn 0.4s ease-in-out;
         }
         
@@ -183,7 +180,7 @@
             </div>
         </section>
 
-        <!-- PAGE: NEWS (NEW) -->
+        <!-- PAGE: NEWS -->
         <section id="news" class="tab-content py-24 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-slate-900 mb-12 font-serif border-l-4 border-brand-500 pl-4">Lab News</h2>
@@ -308,79 +305,57 @@
             </div>
         </section>
 
-        <!-- PAGE: PUBLICATIONS -->
+        <!-- PAGE: PUBLICATIONS (SIMPLIFIED) -->
         <section id="publications" class="tab-content py-24 bg-white">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-slate-900 mb-12 font-serif text-center">Selected Publications</h2>
                 
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden divide-y divide-slate-100">
-                    <!-- Pub 1 (2025) -->
-                    <div class="p-8 hover:bg-slate-50 transition">
-                        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
-                            <!-- [EDIT HERE] Pub 1: Title -->
-                            <h3 class="text-lg font-bold text-slate-900">Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication</h3>
-                            <!-- [EDIT HERE] Pub 1: Year -->
-                            <span class="text-sm font-semibold text-brand-600 shrink-0">2025</span>
-                        </div>
-                        <div class="mt-2 text-slate-600">
-                            <!-- [EDIT HERE] Pub 1: Authors -->
-                            <span class="font-semibold text-slate-900">Zhen, S.</span>, Martinez-Saito, M., & Yu, R.
-                        </div>
-                        <!-- [EDIT HERE] Pub 1: Journal -->
-                        <div class="text-slate-500 italic mt-1 font-serif">NeuroImage</div>
-                        <div class="mt-4 flex gap-4">
-                            <!-- [EDIT HERE] Pub 1: Link (href="URL") -->
-                            <a href="https://doi.org/10.1016/j.neuroimage.2024.121022" target="_blank" class="text-xs font-bold text-slate-400 hover:text-brand-600 uppercase tracking-wide">View Article</a>
-                        </div>
-                    </div>
-
-                    <!-- Pub 2 (2024) -->
-                    <div class="p-8 hover:bg-slate-50 transition">
-                        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
-                            <!-- [EDIT HERE] Pub 2: Title -->
-                            <h3 class="text-lg font-bold text-slate-900">Moral characteristics predicting COVID‐19 vaccination</h3>
-                            <span class="text-sm font-semibold text-brand-600 shrink-0">2024</span>
-                        </div>
-                        <div class="mt-2 text-slate-600">
-                            <!-- [EDIT HERE] Pub 2: Authors -->
-                            Zher-Wen, <span class="font-semibold text-slate-900">Zhen, S.</span>, & Yu, R.
-                        </div>
-                        <!-- [EDIT HERE] Pub 2: Journal -->
-                        <div class="text-slate-500 italic mt-1 font-serif">Journal of Personality</div>
-                        <div class="mt-4 flex gap-4">
-                            <a href="#" class="text-xs font-bold text-slate-400 hover:text-brand-600 uppercase tracking-wide">View Article</a>
-                        </div>
-                    </div>
-
-                    <!-- Pub 3 (2021) -->
-                    <div class="p-8 hover:bg-slate-50 transition">
-                        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
-                            <h3 class="text-lg font-bold text-slate-900">The neural underpinnings of allocentric thinking in a novel signaling task</h3>
-                            <span class="text-sm font-semibold text-brand-600 shrink-0">2021</span>
-                        </div>
-                        <div class="mt-2 text-slate-600">
-                            <span class="font-semibold text-slate-900">Zhen, S.</span>, Chowdhury, A., & Yu, R.
-                        </div>
-                        <div class="text-slate-500 italic mt-1 font-serif">NeuroImage</div>
-                        <div class="mt-4 flex gap-4">
-                            <a href="#" class="text-xs font-bold text-slate-400 hover:text-brand-600 uppercase tracking-wide">View Article</a>
-                        </div>
-                    </div>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden p-8">
                     
-                    <!-- Pub 4 (2019) -->
-                    <div class="p-8 hover:bg-slate-50 transition">
-                        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
-                            <h3 class="text-lg font-bold text-slate-900">Distinct neural patterns underlying ingroup and outgroup conformity</h3>
-                            <span class="text-sm font-semibold text-brand-600 shrink-0">2019</span>
-                        </div>
-                        <div class="mt-2 text-slate-600">
-                            Huang, Y., <span class="font-semibold text-slate-900">Zhen, S.</span>, & Yu, R.
-                        </div>
-                        <div class="text-slate-500 italic mt-1 font-serif">Proceedings of the National Academy of Sciences (PNAS)</div>
-                        <div class="mt-4 flex gap-4">
-                            <a href="#" class="text-xs font-bold text-slate-400 hover:text-brand-600 uppercase tracking-wide">View Article</a>
-                        </div>
+                    <!-- Pub 1 -->
+                    <div class="py-4 border-b border-slate-100">
+                        <p class="text-slate-700 leading-relaxed">
+                            <span class="font-bold text-slate-900"><!-- [EDIT HERE] Title -->Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication.</span>
+                            <!-- [EDIT HERE] Authors --> <span class="font-semibold">Zhen, S.</span>, Martinez-Saito, M., & Yu, R.
+                            <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->NeuroImage</span>
+                            <span class="font-semibold"><!-- [EDIT HERE] Year -->(2025).</span>
+                            <a href="https://doi.org/10.1016/j.neuroimage.2024.121022" target="_blank" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                        </p>
                     </div>
+
+                    <!-- Pub 2 -->
+                    <div class="py-4 border-b border-slate-100">
+                        <p class="text-slate-700 leading-relaxed">
+                            <span class="font-bold text-slate-900"><!-- [EDIT HERE] Title -->Moral characteristics predicting COVID‐19 vaccination.</span>
+                            <!-- [EDIT HERE] Authors --> Zher-Wen, <span class="font-semibold">Zhen, S.</span>, & Yu, R.
+                            <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->Journal of Personality</span>
+                            <span class="font-semibold"><!-- [EDIT HERE] Year -->(2024).</span>
+                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                        </p>
+                    </div>
+
+                    <!-- Pub 3 -->
+                    <div class="py-4 border-b border-slate-100">
+                        <p class="text-slate-700 leading-relaxed">
+                            <span class="font-bold text-slate-900"><!-- [EDIT HERE] Title -->The neural underpinnings of allocentric thinking in a novel signaling task.</span>
+                            <!-- [EDIT HERE] Authors --> <span class="font-semibold">Zhen, S.</span>, Chowdhury, A., & Yu, R.
+                            <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->NeuroImage</span>
+                            <span class="font-semibold"><!-- [EDIT HERE] Year -->(2021).</span>
+                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                        </p>
+                    </div>
+
+                    <!-- Pub 4 -->
+                    <div class="py-4 border-b border-slate-100">
+                        <p class="text-slate-700 leading-relaxed">
+                            <span class="font-bold text-slate-900"><!-- [EDIT HERE] Title -->Distinct neural patterns underlying ingroup and outgroup conformity.</span>
+                            <!-- [EDIT HERE] Authors --> Huang, Y., <span class="font-semibold">Zhen, S.</span>, & Yu, R.
+                            <span class="italic text-slate-600"><!-- [EDIT HERE] Journal -->PNAS</span>
+                            <span class="font-semibold"><!-- [EDIT HERE] Year -->(2019).</span>
+                            <a href="#" class="text-brand-600 hover:underline ml-1 text-sm font-bold">[PDF]</a>
+                        </p>
+                    </div>
+
                 </div>
 
                 <div class="mt-10 text-center">
@@ -391,18 +366,20 @@
             </div>
         </section>
 
-        <!-- PAGE: TEAM -->
+        <!-- PAGE: TEAM (MODIFIED: LIST VIEW) -->
         <section id="team" class="tab-content py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-slate-900 mb-16 font-serif text-center">Our Team</h2>
 
-                <!-- PI Section -->
+                <!-- PI Section (Unchanged) -->
                 <div class="flex flex-col md:flex-row items-center gap-12 mb-20 max-w-5xl mx-auto">
                     <div class="w-56 h-56 flex-shrink-0 bg-slate-100 rounded-full overflow-hidden shadow-xl border-4 border-white">
                         <!-- Placeholder PI Image -->
+                        <!-- [EDIT HERE] Upload 'pi.jpg' to GitHub, then change src to 'src="pi.jpg"' -->
                         <div class="w-full h-full flex items-center justify-center bg-brand-50 text-brand-300">
                                 <i data-lucide="user" class="w-24 h-24"></i>
                         </div>
+                        <!-- <img src="pi.jpg" class="w-full h-full object-cover"> -->
                     </div>
                     <div class="text-center md:text-left flex-1">
                         <!-- [EDIT HERE] PI Name -->
@@ -427,62 +404,91 @@
                     </div>
                 </div>
 
-                <!-- PhD Students Grid -->
-                <div class="max-w-6xl mx-auto">
-                    <h3 class="text-xl font-semibold text-slate-500 uppercase tracking-wide mb-8 text-center md:text-left border-b border-slate-100 pb-4">PhD Students</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        
-                        <!-- PhD Student 1 -->
-                        <div class="text-center group">
-                            <div class="w-32 h-32 mx-auto bg-slate-50 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
-                                <!-- [EDIT HERE] Student Photo -->
-                                <div class="w-full h-full flex items-center justify-center text-slate-300">
-                                    <i data-lucide="smile" class="w-16 h-16"></i>
-                                </div>
+                <!-- PhD Students List (NEW LAYOUT) -->
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <h3 class="text-xl font-semibold text-slate-500 uppercase tracking-wide mb-8 border-b border-slate-100 pb-4">PhD Students</h3>
+                    
+                    <!-- PhD Student 1 -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <div class="w-32 h-32 flex-shrink-0 bg-white rounded-full overflow-hidden shadow-sm border border-slate-200">
+                            <!-- [在此修改] 照片链接：上传照片到GitHub，然后把 src="placeholder.jpg" 改成 src="文件名.jpg" -->
+                            <!-- 例如：<img src="student1.jpg" class="w-full h-full object-cover"> -->
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i data-lucide="user" class="w-16 h-16"></i>
                             </div>
+                        </div>
+                        <div class="text-center md:text-left flex-1">
                             <!-- [EDIT HERE] Student 1: Name -->
-                            <h4 class="font-bold text-slate-900">Student Name</h4>
+                            <h4 class="text-xl font-bold text-slate-900">Student Name 1</h4>
                             <!-- [EDIT HERE] Student 1: Focus -->
-                            <p class="text-xs text-brand-600 mt-1">Research Focus</p>
+                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Computational Modeling</p>
+                            <!-- [EDIT HERE] Student 1: Bio/Description -->
+                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                                Detailed bio goes here. For example: "Interested in how reinforcement learning models can explain social conformity."
+                            </p>
                         </div>
-
-                        <!-- PhD Student 2 -->
-                        <div class="text-center group">
-                            <div class="w-32 h-32 mx-auto bg-slate-50 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
-                                <div class="w-full h-full flex items-center justify-center text-slate-300">
-                                    <i data-lucide="smile" class="w-16 h-16"></i>
-                                </div>
-                            </div>
-                            <!-- [EDIT HERE] Student 2: Name -->
-                            <h4 class="font-bold text-slate-900">Student Name</h4>
-                            <p class="text-xs text-brand-600 mt-1">Research Focus</p>
-                        </div>
-
-                        <!-- PhD Student 3 -->
-                        <div class="text-center group">
-                            <div class="w-32 h-32 mx-auto bg-slate-50 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
-                                <div class="w-full h-full flex items-center justify-center text-slate-300">
-                                    <i data-lucide="smile" class="w-16 h-16"></i>
-                                </div>
-                            </div>
-                            <!-- [EDIT HERE] Student 3: Name -->
-                            <h4 class="font-bold text-slate-900">Student Name</h4>
-                            <p class="text-xs text-brand-600 mt-1">Research Focus</p>
-                        </div>
-
-                        <!-- PhD Student 4 -->
-                        <div class="text-center group">
-                            <div class="w-32 h-32 mx-auto bg-slate-50 rounded-full mb-4 overflow-hidden group-hover:ring-2 ring-brand-300 transition">
-                                <div class="w-full h-full flex items-center justify-center text-slate-300">
-                                    <i data-lucide="smile" class="w-16 h-16"></i>
-                                </div>
-                            </div>
-                            <!-- [EDIT HERE] Student 4: Name -->
-                            <h4 class="font-bold text-slate-900">Student Name</h4>
-                            <p class="text-xs text-brand-600 mt-1">Research Focus</p>
-                        </div>
-
                     </div>
+
+                    <!-- PhD Student 2 -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <div class="w-32 h-32 flex-shrink-0 bg-white rounded-full overflow-hidden shadow-sm border border-slate-200">
+                            <!-- [在此修改] 照片链接 -->
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i data-lucide="user" class="w-16 h-16"></i>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left flex-1">
+                            <!-- [EDIT HERE] Student 2: Name -->
+                            <h4 class="text-xl font-bold text-slate-900">Student Name 2</h4>
+                            <!-- [EDIT HERE] Student 2: Focus -->
+                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: fMRI & Social Cognition</p>
+                            <!-- [EDIT HERE] Student 2: Bio/Description -->
+                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                                Bio goes here. "Investigating the neural substrates of Theory of Mind using multivariate pattern analysis."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PhD Student 3 -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <div class="w-32 h-32 flex-shrink-0 bg-white rounded-full overflow-hidden shadow-sm border border-slate-200">
+                            <!-- [在此修改] 照片链接 -->
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i data-lucide="user" class="w-16 h-16"></i>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left flex-1">
+                            <!-- [EDIT HERE] Student 3: Name -->
+                            <h4 class="text-xl font-bold text-slate-900">Student Name 3</h4>
+                            <!-- [EDIT HERE] Student 3: Focus -->
+                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Decision Making</p>
+                            <!-- [EDIT HERE] Student 3: Bio/Description -->
+                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                                Bio goes here.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PhD Student 4 -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <div class="w-32 h-32 flex-shrink-0 bg-white rounded-full overflow-hidden shadow-sm border border-slate-200">
+                            <!-- [在此修改] 照片链接 -->
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i data-lucide="user" class="w-16 h-16"></i>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left flex-1">
+                            <!-- [EDIT HERE] Student 4: Name -->
+                            <h4 class="text-xl font-bold text-slate-900">Student Name 4</h4>
+                            <!-- [EDIT HERE] Student 4: Focus -->
+                            <p class="text-brand-600 font-medium text-sm mt-1">Research Focus: Brain Stimulation</p>
+                            <!-- [EDIT HERE] Student 4: Bio/Description -->
+                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                                Bio goes here.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -598,3 +604,4 @@
     </script>
 </body>
 </html>
+
