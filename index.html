@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+============================================================
+SHAN Lab website editing guide
+============================================================
+This is a single-file GitHub Pages website.
+Most things you will edit are plain text between HTML tags.
+
+Common safe edits:
+1. Change visible text between tags, for example:
+   <h3>Old title</h3> -> <h3>New title</h3>
+2. Change links inside href="...", for example:
+   href="https://example.com"
+3. Add a new item by copying one complete card block from
+   <!-- START ... ITEM --> to <!-- END ... ITEM -->,
+   pasting it below, and editing the text.
+
+Be careful:
+- Do not delete opening/closing tags such as <div>, </div>, <section>, </section>.
+- Do not delete the final <script> section; it controls the tabs/menu.
+- Comments like this do not appear on the website.
+============================================================
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- EDITABLE: Browser tab title. This is what appears on the browser tab and Google preview. -->
     <title>SHAN Lab | Social, Health, Age, and Neuroscience</title>
+    <!-- EDITABLE: Short website description for search engines and sharing previews. -->
     <meta name="description" content="SHAN Lab at City University of Hong Kong studies social decisions, health, age, and neuroscience using behavioral, computational, and neuroimaging methods.">
     <meta name="author" content="SHAN Lab">
     <meta property="og:title" content="SHAN Lab">
@@ -11,6 +35,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shanpsylab.github.io/">
     
+    <!-- DO NOT EDIT unless you know CSS: Tailwind loads the visual styling system. -->
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -29,6 +54,9 @@
                         serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
+                        // OPTIONAL STYLE EDIT:
+                        // These colors control the whole website palette.
+                        // You can change hex colors like #FAFAFA, but leave the labels (50, 100, etc.) intact.
                         // Smart, crisp academic palette
                         brand: {
                             50: '#F5F6F8',
@@ -116,6 +144,13 @@
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
+    <!--
+    NAVIGATION BAR
+    Purpose: Top menu and logo.
+    Editable: Lab name text, logo filename, menu labels.
+    If you add a new page/tab, you must add a matching button here AND a matching <section id="..."> below.
+    For normal content updates, you usually do not need to edit this section.
+    -->
     <!-- Navigation -->
     <nav class="fixed w-full bg-[#FAFAFA]/95 backdrop-blur-sm border-b border-stone-200 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,9 +209,16 @@
 
     <main class="flex-grow pt-16">
         
+        <!--
+        PAGE: HOME
+        Purpose: First screen visitors see.
+        Editable: tagline, main lab title, short description, button text, and "Our Focus" text.
+        Safe edits: Change words between <h1>, <p>, <button>, and <h3> tags.
+        -->
         <!-- PAGE: HOME -->
         <section id="home" class="tab-content active flex flex-col items-center pt-8 md:pt-12 bg-cream pb-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <!-- HOME HERO SECTION: edit the main homepage introduction here. -->
                 <!-- Hero Section -->
                 <div class="grid md:grid-cols-2 gap-10 items-center min-h-[42vh]">
                     <div>
@@ -212,11 +254,18 @@
                     </div>
                 </div>
 
+                <!--
+                LAB NEWS SECTION
+                Purpose: Short chronological updates.
+                Editable: month, year, news title, and news paragraph.
+                To add news: copy one full block from START NEWS ITEM to END NEWS ITEM, paste it above or below, then edit.
+                -->
                 <!-- Lab News Section -->
                 <div class="mt-12 w-full border-t border-stone-200/60 pt-10">
                     <div class="mb-8"><h2 class="text-3xl font-bold text-stone-900 font-sans border-l-4 border-stone-800 pl-4">Lab News</h2></div>
                     
                     <div class="space-y-5">
+                        <!-- START NEWS ITEM: copy from here to END NEWS ITEM to add another news update. -->
                         <!-- News Item 1: HKPFS -->
                         <div class="bg-white/75 backdrop-blur-sm p-5 rounded-lg border border-stone-200 flex gap-4 hover:border-stone-500 transition">
                             <div class="flex-shrink-0 w-16 text-center">
@@ -231,6 +280,9 @@
                             </div>
                         </div>
 
+                        <!-- END NEWS ITEM -->
+
+                        <!-- START NEWS ITEM -->
                         <!-- News Item 2: OHBM -->
                         <div class="bg-white/75 backdrop-blur-sm p-5 rounded-lg border border-stone-200 flex gap-4 hover:border-stone-500 transition">
                             <div class="flex-shrink-0 w-16 text-center">
@@ -245,6 +297,9 @@
                             </div>
                         </div>
 
+                        <!-- END NEWS ITEM -->
+
+                        <!-- START NEWS ITEM -->
                         <!-- News Item 3: npj -->
                         <div class="bg-white/75 backdrop-blur-sm p-5 rounded-lg border border-stone-200 flex gap-4 hover:border-stone-500 transition">
                             <div class="flex-shrink-0 w-16 text-center">
@@ -260,6 +315,9 @@
                            </div>
                        </div>
                        
+                        <!-- END NEWS ITEM -->
+
+                        <!-- START NEWS ITEM -->
                         <!-- News Item 4: Launch -->
                         <div class="bg-white/75 backdrop-blur-sm p-5 rounded-lg border border-stone-200 flex gap-4 hover:border-stone-500 transition">
                              <div class="flex-shrink-0 w-16 text-center">
@@ -342,12 +400,20 @@
             </div>
         </section>
 
+        <!--
+        PAGE: PUBLICATIONS
+        Purpose: Selected publication list.
+        Editable: article title, authors, year, journal, and article link.
+        To add a publication: copy one full publication card from START PUBLICATION to END PUBLICATION, paste it near the top, then edit.
+        To remove a publication: delete one full publication card only.
+        -->
         <!-- PAGE: PUBLICATIONS -->
         <section id="publications" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-stone-900 mb-12 font-sans border-l-4 border-stone-800 pl-4">Selected Publications</h2>
                 
                 <div class="space-y-5">
+                    <!-- START PUBLICATION CARD: copy this whole card to add a new publication. -->
                     <!-- Publication 1 -->
                     <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-300 hover:border-stone-600 transition">
                         <div class="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full bg-stone-100 text-stone-900 text-xs font-bold uppercase tracking-wide">
@@ -364,6 +430,7 @@
                             </a>
                         </div>
                     </div>
+                    <!-- END PUBLICATION CARD -->
 
                     <!-- Publication 2 -->
                     <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
@@ -534,6 +601,13 @@
             </div>
         </section>
 
+        <!--
+        PAGE: TEAM
+        Purpose: People in the lab.
+        Editable: PI name/title/bio, PhD student names, helper names, roles.
+        To add a person: copy one complete person card inside the relevant group and edit the name/role.
+        To remove a person: delete one complete person card.
+        -->
         <!-- PAGE: TEAM -->
         <section id="team" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -563,6 +637,7 @@
                     <section>
                         <h3 class="text-xl font-semibold text-stone-500 uppercase tracking-wide mb-6">PhD Students</h3>
                         <div class="space-y-4">
+                            <!-- START PERSON CARD: copy this whole card to add another PhD student. -->
                             <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
                                 <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
                                     <i data-lucide="user" class="w-7 h-7"></i>
@@ -572,7 +647,9 @@
                                     <p class="text-sm text-stone-500">PhD Student</p>
                                 </div>
                             </div>
+                            <!-- END PERSON CARD -->
 
+                            <!-- START HELPER CARD: copy this whole card to add another research assistant/helper. -->
                             <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
                                 <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
                                     <i data-lucide="user" class="w-7 h-7"></i>
@@ -582,6 +659,7 @@
                                     <p class="text-sm text-stone-500">PhD Student</p>
                                 </div>
                             </div>
+                            <!-- END HELPER CARD -->
 
                             <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
                                 <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
@@ -663,6 +741,12 @@
             </div>
         </section>
 
+        <!--
+        PAGE: RESOURCES
+        Purpose: Links to tutorials, courses, and useful learning materials.
+        Editable: resource title, description, button text, and href link.
+        To add a resource: copy one resource card and paste it inside the resource list.
+        -->
         <!-- PAGE: RESOURCES -->
         <section id="resources" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -672,6 +756,7 @@
                 </div>
 
                 <div class="flex flex-col gap-6 max-w-4xl mx-auto">
+                    <!-- START RESOURCE CARD: copy from here to END RESOURCE CARD to add a resource. -->
                     <!-- Resource 1 -->
                     <div class="bg-white/75 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-stone-200 hover:border-stone-500 transition group flex flex-col md:flex-row gap-6 items-start">
                         <div class="w-14 h-14 flex-shrink-0 bg-white rounded-lg flex items-center justify-center text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)] group-hover:scale-110 transition-transform">
@@ -687,6 +772,7 @@
                             </a>
                         </div>
                     </div>
+                    <!-- END RESOURCE CARD -->
 
                     <!-- Resource 2 -->
                     <div class="bg-white/75 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-stone-200 hover:border-stone-500 transition group flex flex-col md:flex-row gap-6 items-start">
@@ -739,6 +825,12 @@
             </div>
         </section>
 
+        <!--
+        PAGE: CONTACT
+        Purpose: Address and email information.
+        Editable: address lines, email address, and the introductory contact paragraph.
+        Important: If you change the email, change both href="mailto:..." and the visible email text.
+        -->
         <!-- PAGE: CONTACT -->
         <section id="contact" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -779,6 +871,12 @@
         </section>
     </main>
 
+    <!--
+    GLOBAL FOOTER
+    Purpose: Bottom area shown on every page/tab.
+    Editable: logo, lab name, social/profile links, copyright text.
+    If a link is not needed, delete the whole <a ...>...</a> line.
+    -->
     <!-- Global Footer -->
     <footer class="bg-stone-900 text-stone-300 py-12 border-t border-stone-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
@@ -807,6 +905,11 @@
         </div>
     </footer>
 
+    <!--
+    JAVASCRIPT
+    Purpose: Makes the tab buttons, mobile menu, browser back button, and icons work.
+    Usually do not edit this section.
+    -->
     <script>
         // Tab Switching Logic
         function switchTab(tabId, updateHistory = true) {
@@ -877,3 +980,4 @@
     </script>
 </body>
 </html>
+
