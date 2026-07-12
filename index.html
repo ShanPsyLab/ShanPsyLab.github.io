@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- [EDIT HERE] Browser Tab Title -->
-    <title>SHAN Lab</title>
-    <meta name="description" content="SHAN Lab: Investigating the cognitive, computational, and neural mechanisms underlying social learning and decision-making.">
+    <title>SHAN Lab | Social, Health, Age, and Neuroscience</title>
+    <meta name="description" content="SHAN Lab at City University of Hong Kong studies social decisions, health, age, and neuroscience using behavioral, computational, and neuroimaging methods.">
+    <meta name="author" content="SHAN Lab">
+    <meta property="og:title" content="SHAN Lab">
+    <meta property="og:description" content="Research on social decisions, health, age, and neuroscience at City University of Hong Kong.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shanpsylab.github.io/">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,28 +29,27 @@
                         serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
-                        // Custom Vintage Academic Palette
+                        // Smart, crisp academic palette
                         brand: {
-                            50: '#f4f7f4', // Very light green tint
-                            100: '#e3ebe3',
-                            500: '#5c7a5c', // Muted green
-                            600: '#4a634a',
-                            700: '#2F4F4F', // Hunter Green (Primary Brand)
-                            900: '#1a2e2e',
+                            50: '#F5F6F8',
+                            100: '#E5E7EB',
+                            500: '#6B7280',
+                            600: '#4B5563',
+                            700: '#1F2937',
+                            900: '#18181B',
                         },
-                        // Warm Neutrals
+                        // Clean interface neutrals
                         stone: {
-                            50: '#fafaf9',
-                            100: '#f5f5f4',
-                            200: '#e7e5e4',
-                            500: '#78716c',
-                            600: '#57534e',
-                            800: '#292524',
-                            900: '#1c1917',
+                            50: '#FAFAFA',
+                            100: '#F4F4F5',
+                            200: '#E4E4E7',
+                            500: '#71717A',
+                            600: '#52525B',
+                            800: '#27272A',
+                            900: '#18181B',
                         },
-                        // Cream/Paper Background
-                        cream: '#FDFBF7', 
-                        beige: '#F2EFE9',
+                        cream: '#FAFAFA',
+                        beige: '#F4F4F5',
                     }
                 }
             }
@@ -54,20 +57,20 @@
     </script>
     <style>
         body {
-            background-color: #FDFBF7; /* Cream background base */
-            color: #57534e; /* Stone-600 text */
+            background-color: #FAFAFA;
+            color: #52525B;
         }
         .prose-academic p {
             margin-bottom: 1.25rem;
             line-height: 1.8;
-            color: #57534e;
+            color: #52525B;
         }
         /* Tab Navigation Styles */
         .nav-link {
             position: relative;
             cursor: pointer;
             padding-bottom: 2px;
-            color: #57534e;
+            color: #52525B;
         }
         .nav-link::after {
             content: '';
@@ -76,7 +79,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #2F4F4F;
+            background-color: #1F2937;
             transition: width 0.3s;
         }
         .nav-link:hover::after,
@@ -84,11 +87,16 @@
             width: 100%;
         }
         .nav-link.active {
-            color: #2F4F4F;
+            color: #1F2937;
             font-weight: 700;
         }
         .nav-link:hover {
-            color: #2F4F4F;
+            color: #1F2937;
+        }
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #6B7280;
+            outline-offset: 4px;
         }
         
         /* Strict Visibility Control */
@@ -109,17 +117,17 @@
 <body class="antialiased flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-[#FDFBF7]/95 backdrop-blur-sm border-b border-stone-200 z-50">
+    <nav class="fixed w-full bg-[#FAFAFA]/95 backdrop-blur-sm border-b border-stone-200 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <!-- Logo / Lab Name -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="switchTab('home')">
-                    <span class="font-bold text-lg sm:text-xl text-brand-700 tracking-tight flex items-center gap-2">
+                <button type="button" class="flex-shrink-0 flex items-center cursor-pointer text-left" onclick="switchTab('home')" aria-label="Go to homepage">
+                    <span class="font-bold text-lg sm:text-xl text-stone-900 tracking-tight flex items-center gap-2">
                         <!-- Primary Logo -->
-                        <img src="logo.png" alt="Lab Logo" class="h-10 w-auto object-contain mix-blend-multiply" onerror="this.style.display='none'; document.getElementById('nav-fallback-logo').style.display='block';">
+                        <img src="./logo.png" alt="SHAN Lab logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('nav-fallback-logo').style.display='block';">
                         
                         <!-- Fallback Logo -->
-                        <svg id="nav-fallback-logo" class="w-8 h-8 text-brand-700" style="display:none;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id="nav-fallback-logo" class="w-8 h-8 text-stone-900" style="display:none;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <circle cx="12" cy="12" r="2" fill="currentColor"/>
                             <circle cx="12" cy="7" r="1.5" fill="currentColor"/>
@@ -128,9 +136,9 @@
                             <circle cx="9" cy="16" r="1.5" fill="currentColor"/>
                             <circle cx="15" cy="16" r="1.5" fill="currentColor"/>
                         </svg>
-                        <span class="font-serif">SHAN Lab</span>
+                        <span class="font-sans">SHAN Lab</span>
                     </span>
-                </div>
+                </button>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
@@ -144,7 +152,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="flex items-center md:hidden">
-                    <button id="mobile-menu-btn" class="text-stone-600 hover:text-brand-700 focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-stone-600 hover:text-stone-900 focus:outline-none" aria-label="Open mobile navigation" aria-expanded="false" aria-controls="mobile-menu">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -154,12 +162,12 @@
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-stone-200 fixed w-full top-16 z-40 shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <button onclick="switchTab('home')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Home</button>
-                <button onclick="switchTab('research')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Research</button>
-                <button onclick="switchTab('publications')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Publications</button>
-                <button onclick="switchTab('team')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Team</button>
-                <button onclick="switchTab('resources')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Resources</button>
-                <button onclick="switchTab('contact')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-brand-700 rounded-md font-medium">Contact</button>
+                <button onclick="switchTab('home')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 rounded-md font-medium">Home</button>
+                <button onclick="switchTab('research')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 rounded-md font-medium">Research</button>
+                <button onclick="switchTab('publications')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 rounded-md font-medium">Publications</button>
+                <button onclick="switchTab('team')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 rounded-md font-medium">Team</button>
+                <button onclick="switchTab('resources')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 rounded-md font-medium">Resources</button>
+                <button onclick="switchTab('contact')" class="block w-full text-left px-3 py-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 rounded-md font-medium">Contact</button>
             </div>
         </div>
     </nav>
@@ -167,22 +175,22 @@
     <main class="flex-grow pt-16">
         
         <!-- PAGE: HOME -->
-        <section id="home" class="tab-content active min-h-[calc(100vh-4rem)] flex flex-col items-center pt-6 md:pt-16 bg-gradient-to-br from-cream via-beige to-stone-100 pb-24">
+        <section id="home" class="tab-content active flex flex-col items-center pt-8 md:pt-12 bg-cream pb-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <!-- Hero Section -->
-                <div class="grid md:grid-cols-2 gap-12 items-center min-h-[60vh]">
+                <div class="grid md:grid-cols-2 gap-10 items-center min-h-[42vh]">
                     <div>
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-brand-700 uppercase bg-stone-200 rounded-full">
-                            Social-Decision, Health, Age, Neuroscience
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-stone-900 uppercase bg-stone-100 rounded-full">
+                            Social Decisions, Health, Age, Neuroscience
                         </div>
-                        <h1 class="text-4xl md:text-6xl font-extrabold text-brand-700 tracking-tight mb-6 font-serif leading-tight">
+                        <h1 class="text-4xl md:text-6xl font-extrabold text-stone-900 tracking-tight mb-6 font-sans leading-tight">
                             SHAN Lab
                         </h1>
                         <p class="mt-4 text-lg text-stone-600 leading-relaxed">
-                            We investigate how social and cognitive processes jointly influence human learning and decision-making across the lifespan.
+                            We study how social and cognitive processes shape learning, decision-making, health, and wellbeing across the lifespan.
                         </p>
                         <div class="mt-8 flex gap-4">
-                            <button onclick="switchTab('research')" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-700 hover:bg-brand-600 focus:outline-none transition">
+                            <button onclick="switchTab('research')" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-[0_8px_24px_rgba(15,23,42,0.04)] text-white bg-stone-900 hover:bg-stone-800 focus:outline-none transition">
                                 Our Research
                             </button>
                             <button onclick="switchTab('team')" class="inline-flex items-center px-6 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-transparent hover:bg-beige focus:outline-none transition">
@@ -191,31 +199,29 @@
                         </div>
                     </div>
                     <div class="relative hidden md:block">
-                        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
-                        <div class="absolute top-0 right-0 -mr-10 -mt-10 w-96 h-96 bg-stone-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
                         
-                        <div class="relative bg-beige/60 backdrop-blur p-8 rounded-2xl shadow-sm border border-stone-200/60 prose-academic">
-                            <h3 class="text-lg font-bold text-brand-700 mb-4 border-b border-stone-200 pb-2">Our Focus</h3>
+                        <div class="relative bg-white/80 backdrop-blur p-8 rounded-lg shadow-[0_8px_24px_rgba(15,23,42,0.04)] border border-stone-200 prose-academic">
+                            <h3 class="text-lg font-bold text-stone-900 mb-4 border-b border-stone-200 pb-2">Our Focus</h3>
                             <p class="text-sm text-stone-600 leading-relaxed">
-                                "Our lab unravels the brain mechanisms driving social decision-making, with a distinct focus on how these cognitive processes adapt with age and impact human health and wellbeing."
+                                Our lab investigates the brain and behavioral mechanisms that support social decisions, with a distinct focus on how these processes vary across age and influence health and wellbeing.
                             </p>
-                            <p class="text-sm font-medium text-brand-700 mt-4 leading-relaxed">
-                                &mdash; Combining behavioral paradigms, computational modeling, and neuroimaging to bridge brain, behavior, and lifespan development.
+                            <p class="text-sm font-medium text-stone-900 mt-4 leading-relaxed">
+                                We combine behavioral paradigms, computational modeling, and neuroimaging to bridge brain, behavior, and lifespan development.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Lab News Section -->
-                <div class="mt-20 w-full border-t border-stone-200/60 pt-16">
-                    <h2 class="text-3xl font-bold text-brand-700 mb-10 font-serif border-l-4 border-brand-700 pl-4">Lab News</h2>
+                <div class="mt-12 w-full border-t border-stone-200/60 pt-10">
+                    <div class="mb-8"><h2 class="text-3xl font-bold text-stone-900 font-sans border-l-4 border-stone-800 pl-4">Lab News</h2></div>
                     
-                    <div class="space-y-6">
+                    <div class="space-y-5">
                         <!-- News Item 1: HKPFS -->
-                        <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 flex gap-4 hover:border-brand-500 transition">
+                        <div class="bg-white/75 backdrop-blur-sm p-5 rounded-lg border border-stone-200 flex gap-4 hover:border-stone-500 transition">
                             <div class="flex-shrink-0 w-16 text-center">
-                                <span class="block text-2xl font-bold text-brand-600">Jul</span>
-                                <span class="block text-sm font-semibold text-stone-400">2026</span>
+                                <span class="block text-2xl font-bold text-stone-700">Jul</span>
+                                <span class="block text-sm font-semibold text-stone-500">2026</span>
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold text-stone-800">New HKPFS Awardee Joins the Lab</h3>
@@ -226,10 +232,10 @@
                         </div>
 
                         <!-- News Item 2: OHBM -->
-                        <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 flex gap-4 hover:border-brand-500 transition">
+                        <div class="bg-white/75 backdrop-blur-sm p-5 rounded-lg border border-stone-200 flex gap-4 hover:border-stone-500 transition">
                             <div class="flex-shrink-0 w-16 text-center">
-                                <span class="block text-2xl font-bold text-brand-600">Jun</span>
-                                <span class="block text-sm font-semibold text-stone-400">2026</span>
+                                <span class="block text-2xl font-bold text-stone-700">Jun</span>
+                                <span class="block text-sm font-semibold text-stone-500">2026</span>
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold text-stone-800">Four Poster Presentations at OHBM 2026</h3>
@@ -240,25 +246,25 @@
                         </div>
 
                         <!-- News Item 3: npj -->
-                        <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 flex gap-4 hover:border-brand-500 transition">
+                        <div class="bg-white/75 backdrop-blur-sm p-5 rounded-lg border border-stone-200 flex gap-4 hover:border-stone-500 transition">
                             <div class="flex-shrink-0 w-16 text-center">
-                               <span class="block text-2xl font-bold text-brand-600">Mar</span>
-                               <span class="block text-sm font-semibold text-stone-400">2026</span>
+                               <span class="block text-2xl font-bold text-stone-700">Mar</span>
+                               <span class="block text-sm font-semibold text-stone-500">2026</span>
                            </div>
                            <div>
-                               <h3 class="text-lg font-bold text-stone-800">New Publication in npj Science of Learning</h3>
+                               <h3 class="text-lg font-bold text-stone-800">New Article in npj Science of Learning</h3>
                                <p class="mt-2 text-stone-600 text-sm leading-relaxed">
-                                   Our latest research on the cognitive and neural mechanisms of learning has been published in <span class="italic">npj Science of Learning</span>. Congratulations to all the co-authors!
+                                   Our new article on prosocial model-based decision-making has been published in <span class="italic">npj Science of Learning</span>.
                                </p>
-                               <button onclick="switchTab('publications')" class="inline-block mt-2 text-xs font-semibold text-brand-700 hover:underline">Read more in Publications &rarr;</button>
+                               <button onclick="switchTab('publications')" class="inline-block mt-2 text-xs font-semibold text-stone-900 hover:underline">Read more in Publications &rarr;</button>
                            </div>
                        </div>
                        
                         <!-- News Item 4: Launch -->
-                        <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 flex gap-4 hover:border-brand-500 transition">
+                        <div class="bg-white/75 backdrop-blur-sm p-5 rounded-lg border border-stone-200 flex gap-4 hover:border-stone-500 transition">
                              <div class="flex-shrink-0 w-16 text-center">
-                                <span class="block text-2xl font-bold text-brand-600">Jan</span>
-                                <span class="block text-sm font-semibold text-stone-400">2026</span>
+                                <span class="block text-2xl font-bold text-stone-700">Jan</span>
+                                <span class="block text-sm font-semibold text-stone-500">2026</span>
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold text-stone-800">SHAN Lab Website Launch</h3>
@@ -276,18 +282,18 @@
         <section id="research" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-brand-700 font-serif">Research Areas</h2>
+                    <h2 class="text-3xl font-bold text-stone-900 font-sans">Research Areas</h2>
                     <p class="mt-4 text-lg text-stone-600 max-w-2xl mx-auto">We investigate the intersection of cognition, social behavior, and neuroscience.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                     <!-- Area 1 -->
                     <div class="flex flex-col md:flex-row gap-6 items-start">
-                        <div class="flex-shrink-0 bg-beige rounded-xl p-4 border border-stone-200 text-brand-700 shadow-sm">
+                        <div class="flex-shrink-0 bg-beige rounded-lg p-4 border border-stone-200 text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
                             <i data-lucide="users" class="w-8 h-8"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-stone-900 mb-2">Social Decision-Making</h3>
+                            <h3 class="text-xl font-bold text-stone-900 mb-2">Social Decisions</h3>
                             <p class="text-stone-600 leading-relaxed text-sm">
                                 We explore how individuals make choices in social contexts, how they learn from others, and the underlying neurocomputational mechanisms that guide pro-social behaviors and trust.
                             </p>
@@ -296,20 +302,20 @@
 
                     <!-- Area 2 -->
                     <div class="flex flex-col md:flex-row gap-6 items-start">
-                        <div class="flex-shrink-0 bg-beige rounded-xl p-4 border border-stone-200 text-brand-700 shadow-sm">
+                        <div class="flex-shrink-0 bg-beige rounded-lg p-4 border border-stone-200 text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
                             <i data-lucide="activity" class="w-8 h-8"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-stone-900 mb-2">Cognitive Aging & Health</h3>
+                            <h3 class="text-xl font-bold text-stone-900 mb-2">Age, Cognition & Health</h3>
                             <p class="text-stone-600 leading-relaxed text-sm">
-                                Investigating how learning and decision-making capabilities evolve across the lifespan. We aim to identify neural markers that predict healthy cognitive aging versus decline.
+                                Investigating how learning and decision-making vary across childhood, adolescence, adulthood, and later life, with attention to health and wellbeing.
                             </p>
                         </div>
                     </div>
 
                     <!-- Area 3 -->
                     <div class="flex flex-col md:flex-row gap-6 items-start">
-                        <div class="flex-shrink-0 bg-beige rounded-xl p-4 border border-stone-200 text-brand-700 shadow-sm">
+                        <div class="flex-shrink-0 bg-beige rounded-lg p-4 border border-stone-200 text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
                             <i data-lucide="brain" class="w-8 h-8"></i>
                         </div>
                         <div>
@@ -322,7 +328,7 @@
 
                     <!-- Area 4 -->
                     <div class="flex flex-col md:flex-row gap-6 items-start">
-                        <div class="flex-shrink-0 bg-beige rounded-xl p-4 border border-stone-200 text-brand-700 shadow-sm">
+                        <div class="flex-shrink-0 bg-beige rounded-lg p-4 border border-stone-200 text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
                             <i data-lucide="cpu" class="w-8 h-8"></i>
                         </div>
                         <div>
@@ -339,228 +345,191 @@
         <!-- PAGE: PUBLICATIONS -->
         <section id="publications" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-brand-700 mb-12 font-serif border-l-4 border-brand-700 pl-4">Selected Publications</h2>
+                <h2 class="text-3xl font-bold text-stone-900 mb-12 font-sans border-l-4 border-stone-800 pl-4">Selected Publications</h2>
                 
-                <div class="space-y-6">
+                <div class="space-y-5">
                     <!-- Publication 1 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
-                        <h3 class="text-lg font-bold text-stone-900">Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication</h3>
-                        <div class="mt-2 text-stone-600 text-sm">
-                            <span class="font-semibold text-stone-900">Zhen, S.*</span>, Martinez-Saito, M., & Yu, R. (2025).
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-300 hover:border-stone-600 transition">
+                        <div class="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full bg-stone-100 text-stone-900 text-xs font-bold uppercase tracking-wide">
+                            <i data-lucide="sparkles" class="w-3 h-3"></i> Latest
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">NeuroImage, 121022.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
+                        <h3 class="text-lg font-bold text-stone-900">Deciding for others diminishes model-based decision-making but depends on individual prosociality</h3>
+                        <div class="mt-2 text-stone-600 text-sm">
+                            Huang, Y., Du, X., & <span class="font-semibold text-stone-900">Zhen, S.</span> (2026).
+                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">npj Science of Learning, 11, Article 11.</div>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            <a href="https://www.nature.com/articles/s41539-025-00397-0" target="_blank" rel="noopener noreferrer" class="text-xs px-3 py-1 bg-stone-900 hover:bg-stone-800 text-white rounded transition flex items-center gap-1">
+                                <i data-lucide="external-link" class="w-3 h-3"></i> Article
+                            </a>
                         </div>
                     </div>
 
                     <!-- Publication 2 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
+                        <h3 class="text-lg font-bold text-stone-900">Beyond what was said: Neural computations underlying pragmatic reasoning in referential communication</h3>
+                        <div class="mt-2 text-stone-600 text-sm">
+                            <span class="font-semibold text-stone-900">Zhen, S.*</span>, Martinez-Saito, M., & Yu, R. (2025).
+                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">NeuroImage, 121022.</div>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Moral characteristics underlying COVID-19 vaccination</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Zher-Wen, <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2024).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Journal of Personality, 92, 820–836.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Journal of Personality, 92, 820-836.</div>
                     </div>
 
                     <!-- Publication 3 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
-                        <h3 class="text-lg font-bold text-stone-900">24‐hour movement behaviors and executive functions in preschoolers: a compositional and isotemporal reallocation analysis</h3>
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
+                        <h3 class="text-lg font-bold text-stone-900">24-hour movement behaviors and executive functions in preschoolers: a compositional and isotemporal reallocation analysis</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Lau, P. W., Song, H., Song, D., Wang, J. J., <span class="font-semibold text-stone-900">Zhen, S.</span>, Shi, L., & Yu, R. (2024).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Child Development, 95(2), e110-e121.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Child Development, 95(2), e110-e121.</div>
                     </div>
 
                     <!-- Publication 4 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Not all discounts are created equal: regional activity and brain networks in temporal and effort discounting</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Varma, M., <span class="font-semibold text-stone-900">Zhen, S.*</span>, & Yu, R.* (2023).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">NeuroImage, 280, 120363.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">NeuroImage, 280, 120363.</div>
                     </div>
 
                     <!-- Publication 5 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Social motives in children: Greed and fear in a social bargaining game</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2022).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Journal of Behavioral Decision Making, e2305.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Journal of Behavioral Decision Making, e2305.</div>
                     </div>
 
                     <!-- Publication 6 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Acute stress promotes brain network integration and reduces state transition variability</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Wang, R., <span class="font-semibold text-stone-900">Zhen, S.</span>, Zhou, C., & Yu, R. (2022).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Proceedings of the National Academy of Sciences, 119(24), e2204144119.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Proceedings of the National Academy of Sciences, 119(24), e2204144119.</div>
                     </div>
 
                     <!-- Publication 7 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Spontaneous dishonesty does not specifically engage the perigenual anterior cingulate cortex</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2022).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Proceedings of the National Academy of Sciences, 119(27), e2201445119.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Proceedings of the National Academy of Sciences, 119(27), e2201445119.</div>
                     </div>
 
                     <!-- Publication 8 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">To learn or to gain: neural signatures of exploration in human decision-making</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             <span class="font-semibold text-stone-900">Zhen, S.</span>, Yaple, Z. A., Eickhoff, S. B., & Yu, R. (2022).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Brain Structure and Function, 227(1), 63-76.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Brain Structure and Function, 227(1), 63-76.</div>
                     </div>
 
                     <!-- Publication 9 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">The neural underpinnings of allocentric thinking in a novel signaling task</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             <span class="font-semibold text-stone-900">Zhen, S.</span>, Chowdhury, A., & Yu, R. (2021).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">NeuroImage, 117808.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">NeuroImage, 117808.</div>
                     </div>
 
                     <!-- Publication 10 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Neural correlates of recursive thinking during interpersonal strategic interactions</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2021).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Human Brain Mapping, 42(7), 2128-2146.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Human Brain Mapping, 42(7), 2128-2146.</div>
                     </div>
 
                     <!-- Publication 11 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Age-dependent statistical learning trajectories reveal differences in information weighting</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Herff, S. A., <span class="font-semibold text-stone-900">Zhen, S.</span>, Yu, R., & Agres, K. R. (2020).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Psychology and Aging, 35(8), 1090.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Psychology and Aging, 35(8), 1090.</div>
                     </div>
 
                     <!-- Publication 12 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Distinct neural patterns underlying ingroup and outgroup conformity</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Huang, Y., <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2019).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Proceedings of the National Academy of Sciences, 116(11), 4758-4759.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Proceedings of the National Academy of Sciences, 116(11), 4758-4759.</div>
                     </div>
 
                     <!-- Publication 13 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
-                        <h3 class="text-lg font-bold text-stone-900">Common and distinct neural correlates of self‐serving and prosocial dishonesty</h3>
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
+                        <h3 class="text-lg font-bold text-stone-900">Common and distinct neural correlates of self-serving and prosocial dishonesty</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Pornpattananangkul, N., <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2018).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Human Brain Mapping, 39(7), 3086-3103.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Human Brain Mapping, 39(7), 3086-3103.</div>
                     </div>
 
                     <!-- Publication 14 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">The human amygdala parametrically encodes the intensity of specific facial emotions and their categorical ambiguity</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Wang, S., Yu, R., Tyszka, M., <span class="font-semibold text-stone-900">Zhen, S.</span>, et al. (2017).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Nature Communications, 8, 14821.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Nature Communications, 8, 14821.</div>
                     </div>
 
                     <!-- Publication 15 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Decision ambiguity is mediated by a late positive potential originating from cingulate cortex</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             Sun, S., <span class="font-semibold text-stone-900">Zhen, S.</span>, Fu, Z., Wu, D., Shimojo, S., Adolphs, R., Yu, R., & Wang, S. (2017).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">NeuroImage, 157, 400-414.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">NeuroImage, 157, 400-414.</div>
                     </div>
 
                     <!-- Publication 16 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">All framing effects are not created equal: Low convergent validity between two classic measurements of framing</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2016).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Scientific Reports, 6, 30071.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Scientific Reports, 6, 30071.</div>
                     </div>
 
                     <!-- Publication 17 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">The development of the asymmetrically dominated decoy effect in young children</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2016).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">Scientific Reports, 6, 22678.</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">Scientific Reports, 6, 22678.</div>
                     </div>
 
                     <!-- Publication 18 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 rounded-xl border border-stone-200/60 hover:border-brand-500 transition">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 rounded-lg border border-stone-200 hover:border-stone-500 transition">
                         <h3 class="text-lg font-bold text-stone-900">Tend to compare and tend to be fair: the relationship between social comparison sensitivity and justice sensitivity</h3>
                         <div class="mt-2 text-stone-600 text-sm">
                             <span class="font-semibold text-stone-900">Zhen, S.</span>, & Yu, R. (2016).
                         </div>
-                        <div class="text-brand-700 italic mt-1 text-sm">PLoS One, 11(5).</div>
-                        <div class="mt-4 flex gap-3">
-                            <a href="#" class="text-xs px-3 py-1 bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 rounded transition flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> PDF</a>
-                        </div>
+                        <div class="text-stone-900 italic mt-1 text-sm">PLoS One, 11(5).</div>
                     </div>
                 </div>
                 
                 <div class="mt-8 text-center">
-                    <a href="#" class="text-brand-700 font-semibold hover:text-brand-900 text-sm">View Full Publication List via Google Scholar &rarr;</a>
+                    <a href="https://scholar.google.com/citations?user=EwwV9P0AAAAJ" target="_blank" rel="noopener noreferrer" class="text-stone-900 font-semibold hover:text-stone-900 text-sm">View Full Publication List via Google Scholar &rarr;</a>
                 </div>
             </div>
         </section>
@@ -568,20 +537,20 @@
         <!-- PAGE: TEAM -->
         <section id="team" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-brand-700 mb-12 font-serif border-l-4 border-brand-700 pl-4">Our Team</h2>
+                <h2 class="text-3xl font-bold text-stone-900 mb-12 font-sans border-l-4 border-stone-800 pl-4">Our Team</h2>
 
                 <!-- Principal Investigator -->
                 <div class="mb-16">
                     <h3 class="text-xl font-semibold text-stone-500 uppercase tracking-wide mb-6">Principal Investigator</h3>
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-                        <div class="w-48 h-48 flex-shrink-0 bg-stone-200 rounded-full overflow-hidden shadow-sm border-4 border-white flex items-center justify-center">
-                             <i data-lucide="user" class="w-20 h-20 text-stone-400"></i>
+                        <div class="w-48 h-48 flex-shrink-0 bg-stone-100 rounded-full overflow-hidden shadow-[0_8px_24px_rgba(15,23,42,0.04)] border-4 border-white flex items-center justify-center">
+                             <i data-lucide="user" class="w-20 h-20 text-stone-500"></i>
                         </div>
                         <div class="text-center md:text-left">
-                            <h4 class="text-2xl font-bold text-stone-900">Dr. PI Name</h4>
-                            <p class="text-brand-700 font-medium text-lg mt-1">Assistant Professor</p>
+                            <h4 class="text-2xl font-bold text-stone-900">Dr. Shanshan Zhen</h4>
+                            <p class="text-stone-900 font-medium text-lg mt-1">Assistant Professor</p>
                             <p class="mt-4 text-stone-600 max-w-2xl prose-academic text-sm">
-                                [Brief bio about the Principal Investigator. Mention PhD background, previous postdoc experiences, and primary research vision for the SHAN Lab.]
+                                Dr. Zhen leads SHAN Lab at City University of Hong Kong. Her research examines social decisions, age, health, and neuroscience, with a focus on connecting behavior, computation, and brain mechanisms.
                             </p>
                         </div>
                     </div>
@@ -589,39 +558,107 @@
 
                 <hr class="border-stone-200 my-12">
 
-                <!-- Members Grid -->
-                <div>
-                    <h3 class="text-xl font-semibold text-stone-500 uppercase tracking-wide mb-8">Lab Members</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        
-                        <!-- Member 1 -->
-                        <div class="group text-center bg-beige/30 p-6 rounded-2xl border border-stone-100">
-                            <div class="w-24 h-24 mx-auto bg-stone-200 rounded-full mb-4 flex items-center justify-center text-stone-400">
-                                <i data-lucide="user" class="w-10 h-10"></i>
+                <!-- Lab Members -->
+                <div class="space-y-12 max-w-4xl">
+                    <section>
+                        <h3 class="text-xl font-semibold text-stone-500 uppercase tracking-wide mb-6">PhD Students</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">PhD Student One</h4>
+                                    <p class="text-sm text-stone-500">PhD Student</p>
+                                </div>
                             </div>
-                            <h4 class="font-bold text-stone-900">Student One</h4>
-                            <p class="text-sm text-stone-500">PhD Student</p>
-                        </div>
 
-                        <!-- Member 2 -->
-                        <div class="group text-center bg-beige/30 p-6 rounded-2xl border border-stone-100">
-                            <div class="w-24 h-24 mx-auto bg-stone-200 rounded-full mb-4 flex items-center justify-center text-stone-400">
-                                <i data-lucide="user" class="w-10 h-10"></i>
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">PhD Student Two</h4>
+                                    <p class="text-sm text-stone-500">PhD Student</p>
+                                </div>
                             </div>
-                            <h4 class="font-bold text-stone-900">Student Two</h4>
-                            <p class="text-sm text-stone-500">PhD Student</p>
-                        </div>
-                        
-                        <!-- Member 3 -->
-                        <div class="group text-center bg-beige/30 p-6 rounded-2xl border border-stone-100">
-                            <div class="w-24 h-24 mx-auto bg-stone-200 rounded-full mb-4 flex items-center justify-center text-stone-400">
-                                <i data-lucide="user" class="w-10 h-10"></i>
-                            </div>
-                            <h4 class="font-bold text-stone-900">Student Three</h4>
-                            <p class="text-sm text-stone-500">PhD Student (HKPFS)</p>
-                        </div>
 
-                    </div>
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">PhD Student Three</h4>
+                                    <p class="text-sm text-stone-500">PhD Student (HKPFS)</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">PhD Student Four</h4>
+                                    <p class="text-sm text-stone-500">PhD Student</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">PhD Student Five</h4>
+                                    <p class="text-sm text-stone-500">PhD Student</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl font-semibold text-stone-500 uppercase tracking-wide mb-6">Research Assistants / Helpers</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user-round-plus" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">Helper One</h4>
+                                    <p class="text-sm text-stone-500">Research Assistant</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user-round-plus" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">Helper Two</h4>
+                                    <p class="text-sm text-stone-500">Research Helper</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user-round-plus" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">Helper Three</h4>
+                                    <p class="text-sm text-stone-500">Research Helper</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/75 p-5 rounded-lg border border-stone-200 flex items-center gap-5">
+                                <div class="w-16 h-16 flex-shrink-0 bg-stone-100 rounded-full flex items-center justify-center text-stone-500">
+                                    <i data-lucide="user-round-plus" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900">Helper Four</h4>
+                                    <p class="text-sm text-stone-500">Research Helper</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>
@@ -630,14 +667,14 @@
         <section id="resources" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-brand-700 font-serif">Learning Resources</h2>
+                    <h2 class="text-3xl font-bold text-stone-900 font-sans">Learning Resources</h2>
                     <p class="mt-4 text-lg text-stone-600 max-w-2xl mx-auto">A curated collection of the most highly recommended tutorials, courses, and tools for learning fMRI data analysis and neuroimaging.</p>
                 </div>
 
                 <div class="flex flex-col gap-6 max-w-4xl mx-auto">
                     <!-- Resource 1 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-stone-200/60 hover:border-brand-500 transition group flex flex-col md:flex-row gap-6 items-start">
-                        <div class="w-14 h-14 flex-shrink-0 bg-white rounded-xl flex items-center justify-center text-brand-700 shadow-sm group-hover:scale-110 transition-transform">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-stone-200 hover:border-stone-500 transition group flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-14 h-14 flex-shrink-0 bg-white rounded-lg flex items-center justify-center text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)] group-hover:scale-110 transition-transform">
                             <i data-lucide="book-open" class="w-7 h-7"></i>
                         </div>
                         <div class="flex flex-col flex-grow">
@@ -645,15 +682,15 @@
                             <p class="text-stone-600 text-sm mb-4 leading-relaxed">
                                 Created by Dr. Andrew Jahn, this is arguably the best step-by-step practical guide for beginners. It covers complete pipelines for fMRI processing using major software like SPM, FSL, AFNI, and FreeSurfer.
                             </p>
-                            <a href="https://andysbrainbook.readthedocs.io/en/latest/" target="_blank" class="inline-flex items-center text-brand-700 font-semibold text-sm hover:text-brand-500 transition gap-2 w-fit">
+                            <a href="https://andysbrainbook.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-stone-900 font-semibold text-sm hover:text-stone-500 transition gap-2 w-fit">
                                 Visit Tutorial <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
 
                     <!-- Resource 2 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-stone-200/60 hover:border-brand-500 transition group flex flex-col md:flex-row gap-6 items-start">
-                        <div class="w-14 h-14 flex-shrink-0 bg-white rounded-xl flex items-center justify-center text-brand-700 shadow-sm group-hover:scale-110 transition-transform">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-stone-200 hover:border-stone-500 transition group flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-14 h-14 flex-shrink-0 bg-white rounded-lg flex items-center justify-center text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)] group-hover:scale-110 transition-transform">
                             <i data-lucide="monitor-play" class="w-7 h-7"></i>
                         </div>
                         <div class="flex flex-col flex-grow">
@@ -661,15 +698,15 @@
                             <p class="text-stone-600 text-sm mb-4 leading-relaxed">
                                 Taught by experts Tor Wager and Martin Lindquist. This course provides a fantastic theoretical foundation covering MR physics, BOLD hemodynamics, experimental design, and general linear models (GLM).
                             </p>
-                            <a href="https://www.coursera.org/learn/functional-magnetic-resonance-imaging" target="_blank" class="inline-flex items-center text-brand-700 font-semibold text-sm hover:text-brand-500 transition gap-2 w-fit">
+                            <a href="https://www.coursera.org/learn/functional-magnetic-resonance-imaging" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-stone-900 font-semibold text-sm hover:text-stone-500 transition gap-2 w-fit">
                                 View Course <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
 
                     <!-- Resource 3 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-stone-200/60 hover:border-brand-500 transition group flex flex-col md:flex-row gap-6 items-start">
-                        <div class="w-14 h-14 flex-shrink-0 bg-white rounded-xl flex items-center justify-center text-brand-700 shadow-sm group-hover:scale-110 transition-transform">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-stone-200 hover:border-stone-500 transition group flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-14 h-14 flex-shrink-0 bg-white rounded-lg flex items-center justify-center text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)] group-hover:scale-110 transition-transform">
                             <i data-lucide="video" class="w-7 h-7"></i>
                         </div>
                         <div class="flex flex-col flex-grow">
@@ -677,15 +714,15 @@
                             <p class="text-stone-600 text-sm mb-4 leading-relaxed">
                                 A comprehensive collection of lecture videos and slides from the National Institutes of Health. It dives deeply into advanced structural and functional imaging concepts.
                             </p>
-                            <a href="https://www.youtube.com/playlist?list=PLB9AA0A3405AD32BD" target="_blank" class="inline-flex items-center text-brand-700 font-semibold text-sm hover:text-brand-500 transition gap-2 w-fit">
+                            <a href="https://www.youtube.com/playlist?list=PLB9AA0A3405AD32BD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-stone-900 font-semibold text-sm hover:text-stone-500 transition gap-2 w-fit">
                                 Watch Lectures <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
 
                     <!-- Resource 4 -->
-                    <div class="bg-beige/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-stone-200/60 hover:border-brand-500 transition group flex flex-col md:flex-row gap-6 items-start">
-                        <div class="w-14 h-14 flex-shrink-0 bg-white rounded-xl flex items-center justify-center text-brand-700 shadow-sm group-hover:scale-110 transition-transform">
+                    <div class="bg-white/75 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-stone-200 hover:border-stone-500 transition group flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-14 h-14 flex-shrink-0 bg-white rounded-lg flex items-center justify-center text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)] group-hover:scale-110 transition-transform">
                             <i data-lucide="terminal" class="w-7 h-7"></i>
                         </div>
                         <div class="flex flex-col flex-grow">
@@ -693,7 +730,7 @@
                             <p class="text-stone-600 text-sm mb-4 leading-relaxed">
                                 An amazing summer school dedicated to reproducible neuroimaging. You'll find lectures and resources on Python for neuroimaging (Nilearn), data formatting (BIDS), and machine learning applications.
                             </p>
-                            <a href="https://neurohackademy.org/" target="_blank" class="inline-flex items-center text-brand-700 font-semibold text-sm hover:text-brand-500 transition gap-2 w-fit">
+                            <a href="https://neurohackademy.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-stone-900 font-semibold text-sm hover:text-stone-500 transition gap-2 w-fit">
                                 Explore Resources <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
@@ -705,16 +742,16 @@
         <!-- PAGE: CONTACT -->
         <section id="contact" class="tab-content py-12 md:py-16 bg-cream">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-brand-700 mb-8 font-serif text-center">Get in Touch</h2>
+                <h2 class="text-3xl font-bold text-stone-900 mb-8 font-sans text-center">Get in Touch</h2>
                 
-                <div class="bg-beige/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-stone-200/60 text-center">
+                <div class="bg-white/75 backdrop-blur-sm rounded-lg p-8 md:p-12 border border-stone-200 text-center">
                     <p class="text-lg text-stone-600 mb-8 max-w-2xl mx-auto">
                         We are always looking for motivated students and collaborators. If you are interested in our work, please don't hesitate to reach out.
                     </p>
                     
                     <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-brand-700 shadow-sm">
+                            <div class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
                                 <i data-lucide="map-pin" class="w-5 h-5"></i>
                             </div>
                             <div>
@@ -728,12 +765,12 @@
                         </div>
                         
                         <div class="flex items-start gap-4">
-                             <div class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-brand-700 shadow-sm">
+                             <div class="w-10 h-10 bg-beige rounded-full flex items-center justify-center text-stone-900 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
                                 <i data-lucide="mail" class="w-5 h-5"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-stone-900">Email</h4>
-                                <a href="mailto:email@cityu.edu.hk" class="text-stone-600 text-sm mt-1 hover:text-brand-600 transition">email@cityu.edu.hk</a>
+                                <a href="mailto:shanzhen@cityu.edu.hk" class="text-stone-600 text-sm mt-1 hover:text-stone-700 transition">shanzhen@cityu.edu.hk</a>
                             </div>
                         </div>
                     </div>
@@ -743,12 +780,12 @@
     </main>
 
     <!-- Global Footer -->
-    <footer class="bg-brand-900 text-stone-300 py-12 border-t border-brand-800 mt-auto">
+    <footer class="bg-stone-900 text-stone-300 py-12 border-t border-stone-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             <div class="flex items-center gap-2 mb-4">
-                <img src="logo.png" alt="Lab Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('footer-fallback-logo').style.display='block';">
+                <img src="./logo.png" alt="SHAN Lab logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('footer-fallback-logo').style.display='block';">
                 
-                <svg id="footer-fallback-logo" class="w-6 h-6 text-brand-500" style="display:none;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id="footer-fallback-logo" class="w-6 h-6 text-stone-500" style="display:none;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                      <circle cx="12" cy="12" r="2" fill="currentColor"/>
                      <circle cx="12" cy="7" r="1.5" fill="currentColor"/>
@@ -757,16 +794,16 @@
                      <circle cx="9" cy="16" r="1.5" fill="currentColor"/>
                      <circle cx="15" cy="16" r="1.5" fill="currentColor"/>
                 </svg>
-                <span class="text-xl font-bold font-serif text-brand-50">SHAN Lab @ CityUHK</span>
+                <span class="text-xl font-bold font-sans text-stone-50">SHAN Lab @ CityUHK</span>
             </div>
             
             <div class="flex justify-center gap-8 mb-6">
-                 <a href="#" class="text-stone-400 hover:text-white transition"><span class="sr-only">Twitter</span><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                 <a href="#" class="text-stone-400 hover:text-white transition"><span class="sr-only">GitHub</span><i data-lucide="github" class="w-5 h-5"></i></a>
-                 <a href="#" class="text-stone-400 hover:text-white transition"><span class="sr-only">LinkedIn</span><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                 <a href="https://scholars.cityu.edu.hk/en/persons/shanzhen/" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-white transition"><span class="sr-only">CityUHK profile</span><i data-lucide="building-2" class="w-5 h-5"></i></a>
+                 <a href="https://scholar.google.com/citations?user=EwwV9P0AAAAJ" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-white transition"><span class="sr-only">Google Scholar</span><i data-lucide="graduation-cap" class="w-5 h-5"></i></a>
+                 <a href="https://github.com/ShanPsyLab/ShanPsyLab.github.io" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-white transition"><span class="sr-only">GitHub repository</span><i data-lucide="github" class="w-5 h-5"></i></a>
             </div>
             
-            <p class="text-stone-500 text-sm">© 2026 SHAN Lab @ CityUHK. All rights reserved.</p>
+            <p class="text-stone-500 text-sm">&copy; 2026 SHAN Lab @ CityUHK. All rights reserved.</p>
         </div>
     </footer>
 
@@ -805,6 +842,7 @@
             const mobileMenu = document.getElementById('mobile-menu');
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
+                document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', 'false');
             }
         }
 
@@ -831,6 +869,7 @@
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
         });
 
         // Initialize Icons
